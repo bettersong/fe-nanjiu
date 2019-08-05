@@ -14,5 +14,13 @@
 
 - [day02-写例子说明如何给li绑定事件（ul下有1000+个li）？](https://github.com/bettersong/interview/issues/5)
 
-  
+
+#### day03
+
+- [day03-有好多网站不常用iframe和table这两个标签布局，为什么？](https://github.com/bettersong/interview/issues/6)
+- [day03-说下你对cursor属性的理解](https://github.com/bettersong/interview/issues/7)
+- [day03-请详细描述Ajax的工作原理](https://github.com/bettersong/interview/issues/8)
+- [day03-请描述下JS原型与原型链的理解，以及他们之间的关系](https://github.com/bettersong/interview/issues/9)
+
+
 
