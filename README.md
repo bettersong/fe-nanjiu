@@ -22,5 +22,17 @@
 - [day03-请详细描述Ajax的工作原理](https://github.com/bettersong/interview/issues/8)
 - [day03-请描述下JS原型与原型链的理解，以及他们之间的关系](https://github.com/bettersong/interview/issues/9)
 
+#### day04
+
+- [day04-写 React / Vue 项目时为什么要在列表组件中写 key，其作用是什么？](https://github.com/bettersong/interview/issues/10)
+
+- [day04-网站的TDK该怎么设置？它有什么作用？](https://github.com/bettersong/interview/issues/11)
+
+- [day04-过渡和动画的区别是什么？](https://github.com/bettersong/interview/issues/12)
+
+- [day04-除了video和audio，H5还提供了哪些媒体标签？](https://github.com/bettersong/interview/issues/13)
+
+  
+
 
 
