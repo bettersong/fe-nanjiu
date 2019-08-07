@@ -25,14 +25,19 @@
 #### day04
 
 - [day04-写 React / Vue 项目时为什么要在列表组件中写 key，其作用是什么？](https://github.com/bettersong/interview/issues/10)
-
 - [day04-网站的TDK该怎么设置？它有什么作用？](https://github.com/bettersong/interview/issues/11)
-
 - [day04-过渡和动画的区别是什么？](https://github.com/bettersong/interview/issues/12)
-
 - [day04-除了video和audio，H5还提供了哪些媒体标签？](https://github.com/bettersong/interview/issues/13)
 
+#### day05
+
+- [day05-css中calc()有什么作用？](https://github.com/bettersong/interview/issues/14)
+
+- [day05-说说你对作用域链的理解？](https://github.com/bettersong/interview/issues/15)
+
+- [day05-怎么实现移动端的边框0.5px?](https://github.com/bettersong/interview/issues/16)
+
+- [day05-写个方法找出字符串重复最多的字符及长度？](https://github.com/bettersong/interview/issues/17)
+
   
-
-
 
