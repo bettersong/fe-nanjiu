@@ -1,5 +1,12 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day06
+
+- [day06-怎么自定义鼠标指针的图案？](https://github.com/bettersong/interview/issues/18)
+- [day06-怎样去除HTML标签之间换行产生的空格？](https://github.com/bettersong/interview/issues/19)
+- [day06-分别写出防抖和节流两个函数，并分别描述他们有什么运用场景？](https://github.com/bettersong/interview/issues/20)
+- [day06-为什么要使用css sprites(图片精灵)技术？](https://github.com/bettersong/interview/issues/21)
+
 #### day05
 
 - [day05-css中calc()有什么作用？](https://github.com/bettersong/interview/issues/14)
