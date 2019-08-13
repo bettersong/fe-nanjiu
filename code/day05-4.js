@@ -15,7 +15,20 @@ function searchMaxStr(str){
             }
         }
     }
-    console.log(newStr)
+    console.log(Math.max(...newStr))
+    // 再找出对应的下标
+
 }
 
 searchMaxStr('abcdeabs')
+// let cfStr = str => {
+//     let num = 0;
+//     let cfs = str[0];
+//     console.log(cfs)
+//     for (var i = 0; i < str.length; i++) {
+//         num = num > str.split(str[i]).length - 1 ? num : str.split(str[i]).length - 1
+//         cfs = num > str.split(str[i]).length - 1 ? cfs : str[i]
+//     }
+//     return '重复次数:' + num + '重复字符串:' + cfs
+// }
+// console.log(cfStr('abcdabdkel'))
