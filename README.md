@@ -1,5 +1,12 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day08
+
+- [day08-当一个元素浮动后，它的display值变成什么了呢？](https://github.com/bettersong/interview/issues/26)
+- [day08-请描述下元素的href属性与src属性的区别？](https://github.com/bettersong/interview/issues/27)
+- [day08-css的overflow属性定义溢出元素内容区的内容会如何处置呢？](https://github.com/bettersong/interview/issues/28)
+- [day08-写一个方法随机打乱数组元素？](https://github.com/bettersong/interview/issues/29)
+
 #### day07
 
 - [day07-在HTML5中如何组合标题，用哪个元素？](https://github.com/bettersong/interview/issues/22)
