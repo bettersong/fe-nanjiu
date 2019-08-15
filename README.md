@@ -1,5 +1,13 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day09
+
+- [day09-typeof运算符和instanceof运算符以及isPrototypeOf()方法的区别？](https://github.com/bettersong/interview/issues/30)
+- [day09-call()与apply()的区别](https://github.com/bettersong/interview/issues/31)
+- [day09-描述以下变量的区别：null，undefined，undeclared](https://github.com/bettersong/interview/issues/32)
+- [day09-说说什么是同步与异步？](https://github.com/bettersong/interview/issues/33)
+- [day09-什么是事件代理/事件委托？](https://github.com/bettersong/interview/issues/34)
+
 #### day08
 
 - [day08-当一个元素浮动后，它的display值变成什么了呢？](https://github.com/bettersong/interview/issues/26)
