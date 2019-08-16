@@ -1,5 +1,13 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day10
+
+- [day10-说一说如何阻止默认行为，以及如何阻止事件冒泡？](https://github.com/bettersong/interview/issues/36)
+- [day10-说说什么是原生对象，什么是宿主对象？](https://github.com/bettersong/interview/issues/37)
+- [day10-说说有哪些基本数据类型和引用数据类型，以及他们的区别？](https://github.com/bettersong/interview/issues/38)
+- [day10-解释一下原型继承的原理？](https://github.com/bettersong/interview/issues/39)
+- [day10-说一说get和post的区别？](https://github.com/bettersong/interview/issues/40)
+
 #### day09
 
 - [day09-typeof运算符和instanceof运算符以及isPrototypeOf()方法的区别？](https://github.com/bettersong/interview/issues/30)
@@ -7,6 +15,7 @@
 - [day09-描述以下变量的区别：null，undefined，undeclared](https://github.com/bettersong/interview/issues/32)
 - [day09-说说什么是同步与异步？](https://github.com/bettersong/interview/issues/33)
 - [day09-什么是事件代理/事件委托？](https://github.com/bettersong/interview/issues/34)
+- [day09-什么情况下会碰到跨域问题，如何解决？](https://github.com/bettersong/interview/issues/35)
 
 #### day08
 
