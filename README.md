@@ -1,5 +1,12 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day11
+
+- [day11-JavaScript深入之作用域链](https://github.com/bettersong/interview/issues/44)
+- [day11-类数组对象和arguments](https://github.com/bettersong/interview/issues/45)
+- [day11-创建对象的多种方式以及优缺点？](https://github.com/bettersong/interview/issues/46)
+- [day11-继承的多种方式以及优缺点？](https://github.com/bettersong/interview/issues/47)
+
 #### day10
 
 - [day10-说一说如何阻止默认行为，以及如何阻止事件冒泡？](https://github.com/bettersong/interview/issues/36)
