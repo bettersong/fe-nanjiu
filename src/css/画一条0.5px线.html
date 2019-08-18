@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .line{
+            width:500px;
+            border:1px solid #ccc;
+            transform:scaleY(0.5)     /*采用scale对Y轴缩放0.5倍，就可以*/
+        }
+    </style>
+</head>
+<body>
+    <div class="line"></div>
+    <span id="link">baidu</span>
+
+    <script>
+        // js打开页面
+        document.getElementById('link').onclick = function() {
+            // window.open('http://www.baidu.com')
+            // location.href = 'http://www.baidu.com'
+            //    location.replace('http://www.baidu.com')   //无后退功能
+        }
+    </script>
+</body>
+</html>

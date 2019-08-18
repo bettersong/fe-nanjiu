@@ -54,3 +54,5 @@ var child3 = new Child2('wangwu',20)
 console.log(child3)  //Parent2 { name: 'zhangsan', age: 20 }
 console.log(child3.name,child3.age)  // zhangsan  20
 child3.sayName()    //zhangsan
+
+// 4.原型继承

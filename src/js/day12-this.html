@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var name = 'windowName'
+        var obj = {
+            name: 'objName',
+            sayName: function(){
+                console.log(this.name)
+            }
+        }    
+        obj.sayName()      //'objName'
+        window.obj.sayName()      //'objName'   最后调用sayName方法的是obj，所以this指向obj
+        var say = obj.sayName
+        say()        //'windowName'  这里需要注意的是，obj。sayName并没有执行，只是将这个函数赋给了全局的say，say()也就相当于window.say()  所以这里的this指向window，打印的也就是全局的name：'windowName'
+        // var say1 = obj.sayName()
+        // console.log(say1)
+        var obj2 = {
+            sayName: function(){
+                console.log(this.name)
+            }
+        }
+        obj2.sayName()      //undefined   最后调用sayName方法的是obj2，this指向obj2，obj2中没有name属性，所以打印undefined
+    </script>
+</body>
+</html>
