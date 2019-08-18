@@ -14,11 +14,11 @@
 - [day11-创建对象的多种方式以及优缺点？](https://github.com/bettersong/interview/issues/46)
 - [day11-继承的多种方式以及优缺点？](https://github.com/bettersong/interview/issues/47)
 
-- https://github.com/bettersong/interview/issues/1)
 
-  
-  
-  
 
-#### 查看更多
+
+
+#### [查看更多](<https://github.com/bettersong/interview/blob/master/src/md/1.md>)
+
+
 
