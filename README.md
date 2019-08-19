@@ -1,5 +1,12 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day3
+
+- [day13-浮动与清除浮动](https://github.com/bettersong/interview/issues/53)
+- [day13-BFC相关知识](https://github.com/bettersong/interview/issues/54)
+- [day13-JavaScript专题之深浅拷贝](https://github.com/bettersong/interview/issues/55)
+- [day13-JavaScript专题之类型判断](https://github.com/bettersong/interview/issues/56)
+
 #### day12
 
 - [day12-怎么让一个不定宽高的div，水平垂直居中？](https://github.com/bettersong/interview/issues/48)
