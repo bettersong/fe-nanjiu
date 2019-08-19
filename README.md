@@ -1,6 +1,6 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
-#### day3
+#### day13
 
 - [day13-浮动与清除浮动](https://github.com/bettersong/interview/issues/53)
 - [day13-BFC相关知识](https://github.com/bettersong/interview/issues/54)
