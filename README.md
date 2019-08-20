@@ -1,6 +1,6 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
-#### day4
+#### day14
 
 - [day14-box-sizing是什么？](https://github.com/bettersong/interview/issues/57)
 - [day14-说说px,em,rem的区别？](https://github.com/bettersong/interview/issues/58)
