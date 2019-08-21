@@ -36,3 +36,9 @@ for(var i=0; i<3; i++){
 }
 data[0]()   //3
 // console.log(parseInt('aaa'))
+// eval
+var y = 1
+if(function f(){}){
+    y += typeof f
+}
+console.log(y)
