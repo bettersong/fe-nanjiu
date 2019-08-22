@@ -162,7 +162,7 @@ Function.prototype.b = function(){
 var f = new F()   //f不是一个函数，它是一个实例对象
 console.log(typeof F)    //function
 console.log(typeof f)    //object
-F.a()
-F.b()
-f.a()
-// f.b()
+F.a()  //'a'
+F.b()  //'b'
+f.a()  //'a'
+// f.b()  //报错

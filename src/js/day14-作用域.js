@@ -42,3 +42,22 @@ if(function f(){}){
     y += typeof f
 }
 console.log(y)
+
+// 作用域，值传递与引用传递
+var num1 = 55
+var num2 = 66
+function fn(num,num1){
+    // 这里函数接收参数实际上相当于在函数内部声明了这些变量
+    // 即：
+    // var num
+    // var num1
+    num = 100
+    num1 = 100
+    num2 = 100
+    console.log(num)   //100
+    console.log(num1)  //100
+    console.log(num2)  //100
+}
+fn(num1,num2)
+console.log(num1)   //55  注意：这里不要以为是100，它找的是全局作用域中的num1，并且num1没有被修改过，在fn函数中修改的num1其实并不是全局的，是它自己内部的，因为它接收num1参数相当于在函数内部声明了num1变量，与全局不是同一个
+//console.log(num)   //报错，全局中并没有num变量

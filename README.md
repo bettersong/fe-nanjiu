@@ -1,5 +1,12 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day16
+
+- [day16-css隐藏元素的几种方式及区别？](https://github.com/bettersong/interview/issues/65)
+- [day16-消除图片底部间隙的方法](https://github.com/bettersong/interview/issues/66)
+- [day16-从一个URL地址到页面最终渲染，中间发生了什么？](https://github.com/bettersong/interview/issues/67)
+- [day16-HTTP和HTTPS](https://github.com/bettersong/interview/issues/68)
+
 #### day15
 
 - [day15-css引入的方式有哪些？说说link和@import的区别？](https://github.com/bettersong/interview/issues/61)
