@@ -1,5 +1,12 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day17
+
+- [day17-说说什么是渐进增强和优雅降级？](https://github.com/bettersong/interview/issues/69)
+- [day17-html中button按钮中的reset属性有什么用呢？](https://github.com/bettersong/interview/issues/70)
+- [day17-分析('b' + 'a' + +'a' + 'a').toLowerCase()返回的结果](https://github.com/bettersong/interview/issues/71)
+- [day17-原生JS中DOM节点相关的API集合](https://github.com/bettersong/interview/issues/72)
+
 #### day16
 
 - [day16-css隐藏元素的几种方式及区别？](https://github.com/bettersong/interview/issues/65)
