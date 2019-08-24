@@ -4,7 +4,7 @@ Function.prototype.myCall = function(context){
     var context = context || window
     // 将要借用的那个方法绑定在当前要使用该方法的对象的fn属性上
     context.fn = this
-    // 这里的this指向你想要借用的那个方法也就是.myCall前面的调用者
+    // 这里的this指向你想要借用的那个方法也就是.myCall前面的调用者(这里的this指的是一个函数)
     console.log(this)
     //获取参数，也就是相当于call的参数列表
     var args = [...arguments].slice(1)

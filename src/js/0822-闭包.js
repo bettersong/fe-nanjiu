@@ -16,40 +16,51 @@
         2.用完闭包要及时清除
 */
 
-function fun(){
-    var count = 1
-    function fun2(){
-        console.log(count)
+// function fun(){
+//     var count = 1
+//     function fun2(){
+//         console.log(count)
+//     }
+//     fun2()
+// }
+
+// fun()
+
+// // 闭包的应用场景
+// function fun() {
+//     var count = 1
+//     return function() {
+//         console.log(count)
+//     }
+// }
+
+// var fun2 = fun()
+// // fun2()
+// console.log('--------------------------')
+// // 闭包经典面试题
+// function fun(n, o){
+//     console.log(o)
+//     return {
+//         fun: function(m){
+//             return fun(m,n)
+//         }
+//     }
+// }
+// var a = fun(0)   //undefined  object
+// a.fun(1)  // function
+// a.fun(2)  // 
+// a.fun(3)
+
+// var b = fun(0).fun(1).fun(2).fun(3)   //?
+// var c = fun(0).fun(1)
+
+function fn(){
+    var a = 10
+    return () => {
+        return a
     }
-    fun2()
 }
-
-fun()
-
-// 闭包的应用场景
-function fun() {
-    var count = 1
-    return function() {
-        console.log(count)
-    }
-}
-
-var fun2 = fun()
-// fun2()
-console.log('--------------------------')
-// 闭包经典面试题
-function fun(n, o){
-    console.log(o)
-    return {
-        fun: function(m){
-            return fun(m,n)
-        }
-    }
-}
-var a = fun(0)   //undefined  object
-a.fun(1)  // function
-a.fun(2)  // 
-a.fun(3)
-
-var b = fun(0).fun(1).fun(2).fun(3)   //?
-var c = fun(0).fun(1)
+// 上面这个函数实际上就已经产生了闭包：函数嵌套，内部函数引用外部函数的局部变量
+console.log(a)   //这样在全局是拿不到fn函数的局部变量的，所以会报错
+var b = fn()
+console.log(b()) //10  通过闭包就能使外部函数访问到内部函数的变量了

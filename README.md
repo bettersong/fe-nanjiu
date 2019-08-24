@@ -1,5 +1,12 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day18
+
+- [day18-说说什么是重绘与回流？](https://github.com/bettersong/interview/issues/73)
+- [day18-块级元素与行内元素的区别？img可以设置宽高吗？](https://github.com/bettersong/interview/issues/74)
+- [day18-闭包及使用场景？](https://github.com/bettersong/interview/issues/75)
+- [day18-cookie,sessionStorage,localStorage](https://github.com/bettersong/interview/issues/76)
+
 #### day17
 
 - [day17-说说什么是渐进增强和优雅降级？](https://github.com/bettersong/interview/issues/69)

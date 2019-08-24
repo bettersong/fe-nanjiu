@@ -118,13 +118,13 @@ console.log(lucy.sayAnotherHi()); // 4:jerry
         }
         run2();
         console.log(a); // 3:1
-
         function run3(a) {
+            //var a
             console.log(a); // 4:8
-            a = 5;
+            a = 5;   //变成了run3中的局部变量
         }
         run3(8);
-        console.log(a); // 5:1
+        console.log(a); // 5:
 
         function run4() {
             a = 4;
@@ -133,7 +133,7 @@ console.log(lucy.sayAnotherHi()); // 4:jerry
 
         return run4;
     }
-
+    run()
     var result = run();
     console.log(a); // 7:1
 
