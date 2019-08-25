@@ -1,5 +1,12 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day19
+
+- [day19-高性能css3动画](https://github.com/bettersong/interview/issues/77)
+- [day19-说说你对web语义化的理解？](https://github.com/bettersong/interview/issues/78)
+- [day19-说说MVC和MVVM的区别？听说过MVP吗](https://github.com/bettersong/interview/issues/79)
+- [day19-JavaScript中有一个函数，执行对象查找时，永远不会去找找他的原型，这个函数是？](https://github.com/bettersong/interview/issues/80)
+
 #### day18
 
 - [day18-说说什么是重绘与回流？](https://github.com/bettersong/interview/issues/73)
