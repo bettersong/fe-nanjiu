@@ -1,5 +1,12 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day20
+
+- [day20-前端需要注意那些SEO优化？](https://github.com/bettersong/interview/issues/81)
+- [day20-如何进行网站性能优化？](https://github.com/bettersong/interview/issues/82)
+- [day20-HTML5离线存储怎么用，能否解释下原理？](https://github.com/bettersong/interview/issues/83)
+- [day20-说一说new生成一个对象的内部原理？并手动实现一个new方法](https://github.com/bettersong/interview/issues/84)
+
 #### day19
 
 - [day19-高性能css3动画](https://github.com/bettersong/interview/issues/77)
