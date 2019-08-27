@@ -1,5 +1,12 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day21
+
+- [day21-doctype的作用是什么？](https://github.com/bettersong/interview/issues/85)
+- [day21-script标签中的defer和async的区别？](https://github.com/bettersong/interview/issues/86)
+- [day21-三句话道破JS原型链](https://github.com/bettersong/interview/issues/87)
+- [day21-手写一下节流函数与防抖函数](https://github.com/bettersong/interview/issues/88)
+
 #### day20
 
 - [day20-前端需要注意那些SEO优化？](https://github.com/bettersong/interview/issues/81)
