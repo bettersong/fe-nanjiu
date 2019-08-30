@@ -1,5 +1,12 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day24
+
+- [day24-说说什么是虚拟DOM?](https://github.com/bettersong/interview/issues/97)
+- [day24-react中的setState是同步的还是异步的？](https://github.com/bettersong/interview/issues/98)
+- [day24-浏览器缓存一套（强制缓存，协商缓存，应用缓存）](https://github.com/bettersong/interview/issues/99)
+- [day24-说说内存泄漏与垃圾回收算法](https://github.com/bettersong/interview/issues/100)
+
 #### day23
 
 - [day23-css预处理器有什么优势？](https://github.com/bettersong/interview/issues/93)

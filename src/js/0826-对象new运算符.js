@@ -22,3 +22,5 @@ var person = myNew()
 person.name = 'zhangsan'
 console.log(person) //{name: "zhangsan"}
 console.log(typeof person === 'object') //true
+
+;
