@@ -6,3 +6,16 @@
         2.提前返回 - 返回接收余下的参数且返回结果的新函数
         3.延迟执行 - 返回新函数，等待执行
 */
+const curry = (fn, ...args) => {
+    args.length < fn.length 
+       ? (...arguments) => curry(fn, ...args,...arguments)
+       : fn(...args)
+}
+
+function add(a,b){
+    
+    return a + b
+}
+
+let sum = curry(add)
+console.log(sum(1)(2))

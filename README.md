@@ -1,5 +1,12 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day26
+
+- [day26-JS中的EventLoop事件循环机制](https://github.com/bettersong/interview/issues/105)
+- [day26-手写以下原生ajax，并说说readyState有哪几种状态？](https://github.com/bettersong/interview/issues/106)
+- [day26-css哪些属性可以继承？](https://github.com/bettersong/interview/issues/107)
+- [day26- react生命周期，以及diff算法，diff算法是对树的深度优先遍历还是广度优先遍历？](https://github.com/bettersong/interview/issues/108)
+
 #### day25
 
 - [day25-谈谈你对webpack的理解？](https://github.com/bettersong/interview/issues/101)

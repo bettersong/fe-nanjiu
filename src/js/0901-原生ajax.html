@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建一个HTTP对象
+        var http = new XMLHttpRequest()  
+        // 指定请求
+        http.open('get', 'http://134.175.154.93:8099/manager/article/findArticle?page=0&pageSize=10')
+        // 监听响应状态
+        http.onreadystatechange = function () {
+            if (http.readyState === 4 && http.status === 200) {
+                console.log(http.responseText)
+            }
+        }
+        // 发送请求，有参数可以在这里传递参数，这里直接把参数放在路径中去了，这样省了转换参数格式这一步
+        http.send()    
+    </script>
+</body>
+</html>
