@@ -1,5 +1,12 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day27
+
+- [day27-介绍JS有哪些内置对象？](https://github.com/bettersong/interview/issues/109)
+- [day27-如何编写高性能的JavaScript代码？](https://github.com/bettersong/interview/issues/110)
+- [day27-（React）区分有状态组件和无状态组件？](https://github.com/bettersong/interview/issues/111)
+- [day27-React的setState什么时候是同步的，什么时候是异步的？](https://github.com/bettersong/interview/issues/112)
+
 #### day26
 
 - [day26-JS中的EventLoop事件循环机制](https://github.com/bettersong/interview/issues/105)
