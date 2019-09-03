@@ -1,5 +1,12 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day28
+
+- [day28-说说HTTP请求方式都有哪些？](https://github.com/bettersong/interview/issues/113)
+- [day28-说说关于meta标签你都知道那些内容？](https://github.com/bettersong/interview/issues/114)
+- [day28-AMD与CMD的区别有哪些？](https://github.com/bettersong/interview/issues/115)
+- [day28-说说进程和线程的区别？](https://github.com/bettersong/interview/issues/116)
+
 #### day27
 
 - [day27-介绍JS有哪些内置对象？](https://github.com/bettersong/interview/issues/109)
