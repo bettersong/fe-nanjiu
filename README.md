@@ -1,5 +1,12 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day29
+
+- [day29-说说JavaScript中有哪些全局函数？](https://github.com/bettersong/interview/issues/117)
+- [day29-数组API填坑](https://github.com/bettersong/interview/issues/118)
+- [day29-说说“===”与“==”的区别？](https://github.com/bettersong/interview/issues/119)
+- [day29-Promise有哪些状态？](https://github.com/bettersong/interview/issues/120)
+
 #### day28
 
 - [day28-说说HTTP请求方式都有哪些？](https://github.com/bettersong/interview/issues/113)
