@@ -1,5 +1,12 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day30
+
+- [day30- js的各种位置，比如clientHeight,scrollHeight,offsetHeight ,以及scrollTop, offsetTop,clientTop的区别？](https://github.com/bettersong/interview/issues/121)
+- [day30-说说web worker的工作流程？](https://github.com/bettersong/interview/issues/122)
+- [day30-说说H5的拖放API](https://github.com/bettersong/interview/issues/123)
+- [day30-说说HTTP1.0与HTTP2.0](https://github.com/bettersong/interview/issues/124)
+
 #### day29
 
 - [day29-说说JavaScript中有哪些全局函数？](https://github.com/bettersong/interview/issues/117)
