@@ -1,5 +1,12 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day31
+
+- [day31-什么是设计模式，请介绍几个常见的设计模式？](https://github.com/bettersong/interview/issues/125)
+- [day31-react-router路由系统的实现原理？](https://github.com/bettersong/interview/issues/126)
+- [day31-说说css3有哪些新特性？](https://github.com/bettersong/interview/issues/127)
+- [day31-说说什么是FOUC(Flash Of UnStyled Content)，如何避免FOUC?](https://github.com/bettersong/interview/issues/128)
+
 #### day30
 
 - [day30- js的各种位置，比如clientHeight,scrollHeight,offsetHeight ,以及scrollTop, offsetTop,clientTop的区别？](https://github.com/bettersong/interview/issues/121)
