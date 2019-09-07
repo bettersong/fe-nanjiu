@@ -1,5 +1,12 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day32
+
+- [day32-用css实现一个上三角形](https://github.com/bettersong/interview/issues/129)
+- [day32-ajax中遇到前进或者后退](https://github.com/bettersong/interview/issues/130)
+- [day32-说说有关超链接的伪类有哪些](https://github.com/bettersong/interview/issues/131)
+- [day32-说说什么是网络安全XSS，以及如何避免？](https://github.com/bettersong/interview/issues/132)
+
 #### day31
 
 - [day31-什么是设计模式，请介绍几个常见的设计模式？](https://github.com/bettersong/interview/issues/125)
