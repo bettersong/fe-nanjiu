@@ -1,5 +1,12 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day33
+
+- [day33-说说git和SVN的区别](https://github.com/bettersong/interview/issues/133)
+- [day33-说说JS的运行机制，事件队列和循环](https://github.com/bettersong/interview/issues/134)
+- [day33-说说浏览器的构成和运行机制以及浏览器的内核](https://github.com/bettersong/interview/issues/135)
+- [day33-说说浏览器的渲染原理](https://github.com/bettersong/interview/issues/136)
+
 #### day32
 
 - [day32-用css实现一个上三角形](https://github.com/bettersong/interview/issues/129)
