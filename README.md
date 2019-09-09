@@ -1,5 +1,12 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day34
+
+- [day34-你知道vue最低兼容到IE几吗？](https://github.com/bettersong/interview/issues/137)
+- [day34-说说vue的双向数据绑定原理？](https://github.com/bettersong/interview/issues/138)
+- [day34-vue的导航钩子有哪些？它们有哪些参数？](https://github.com/bettersong/interview/issues/139)
+- [day34-请详细说下vue有哪些生命周期？](https://github.com/bettersong/interview/issues/140)
+
 #### day33
 
 - [day33-说说git和SVN的区别](https://github.com/bettersong/interview/issues/133)
