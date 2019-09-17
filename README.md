@@ -1,5 +1,12 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day35
+
+- [day35-说说document.write和innerHTML的区别？](https://github.com/bettersong/interview/issues/141)
+- [day35-前端页面有哪三层？](https://github.com/bettersong/interview/issues/142)
+- [day35-http响应状态常见状态码](https://github.com/bettersong/interview/issues/143)
+- [day35-常见浏览器内核有哪些？](https://github.com/bettersong/interview/issues/144)
+
 #### day34
 
 - [day34-你知道vue最低兼容到IE几吗？](https://github.com/bettersong/interview/issues/137)
