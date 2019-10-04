@@ -1,5 +1,12 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day36
+
+- [day36-shadow dom和virtual dom 的区别？](https://github.com/bettersong/interview/issues/145)
+- [day36-css的linear-gradient的作用是什么？](https://github.com/bettersong/interview/issues/146)
+- [day36-你了解什么是AOP吗？](https://github.com/bettersong/interview/issues/147)
+- [day36-为什么HTML5里面不需要DTD?](https://github.com/bettersong/interview/issues/148)
+
 #### day35
 
 - [day35-说说document.write和innerHTML的区别？](https://github.com/bettersong/interview/issues/141)
