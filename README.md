@@ -2,7 +2,7 @@
 
 #### day36
 
-- [day36-shadow dom和virtual dom 的区别？](https://github.com/bettersong/interview/issues/145)
+- [day36-shadow dom和virtual dom 的区别知道吗？](https://github.com/bettersong/interview/issues/145)
 - [day36-css的linear-gradient的作用是什么？](https://github.com/bettersong/interview/issues/146)
 - [day36-你了解什么是AOP吗？](https://github.com/bettersong/interview/issues/147)
 - [day36-为什么HTML5里面不需要DTD?](https://github.com/bettersong/interview/issues/148)
