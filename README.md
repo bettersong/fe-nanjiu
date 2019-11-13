@@ -1,5 +1,12 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day37
+
+- [day37-说说vue3的双向数据绑定改了什么，为什么要改？](https://github.com/bettersong/interview/issues/149)
+- [day37-webpack怎么配置提升打包速率？](https://github.com/bettersong/interview/issues/150)
+- [day37 - 说说proxy？](https://github.com/bettersong/interview/issues/151)
+- [day37-post传输文件用什么数据格式，为什么？](https://github.com/bettersong/interview/issues/152)
+
 #### day36
 
 - [day36-shadow dom和virtual dom 的区别知道吗？](https://github.com/bettersong/interview/issues/145)
