@@ -2,7 +2,6 @@
 
 #### day38
 
-- [day38-今天很不爽](https://github.com/bettersong/interview/issues/153)
 - [day38-你关于性能优化是否只知道js文件摆放顺序、减少请求、雪碧图等等，却连衡量指标window.performance.timing都不清楚是干什么的？](https://github.com/bettersong/interview/issues/154)
 - [day38 - 请你描述下一个网页是如何渲染出来的，dom树和css树是如何合并的，浏览器的运行机制是什么，什么是否会造成渲染阻塞？](https://github.com/bettersong/interview/issues/155)
 - [day38 - 请简述下js引擎的工作原理，js是怎样处理事件的eventloop，宏任务源tasks和微任务源jobs分别有哪些？js是如何构造抽象语法书（AST）的？](https://github.com/bettersong/interview/issues/156)
