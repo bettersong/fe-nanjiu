@@ -1,5 +1,12 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+#### day39
+
+- [day39 - 谈一谈浏览器的缓存机制？](https://github.com/bettersong/interview/issues/157)
+- [day39 - Ajax 解决浏览器缓存问题？](https://github.com/bettersong/interview/issues/158)
+- [day39 - 同步和异步的区别？](https://github.com/bettersong/interview/issues/159)
+- [day39 - 什么是浏览器的同源政策？](https://github.com/bettersong/interview/issues/160)
+
 #### day38
 
 - [day38-你关于性能优化是否只知道js文件摆放顺序、减少请求、雪碧图等等，却连衡量指标window.performance.timing都不清楚是干什么的？](https://github.com/bettersong/interview/issues/154)
