@@ -16,6 +16,7 @@ var newobj = shallowCopy(obj)
 obj[2].name = 'lisi'
 console.log(obj)   // [ 1, 2, { name: 'lisi' } ]
 console.log(newobj) //[ 1, 2, { name: 'lisi' } ]
+console.log(obj == newobj)
 // 这样就实现了浅复制的封装
 
 // 深拷贝

@@ -16,11 +16,23 @@
     <script>
         var btns = document.getElementsByTagName('button')
         console.log(btns)
+        // for(var i=0; i < btns.length; i++){
+        //     btns[i].onclick = function() {
+        //         console.log(i)
+        //     }
+        // }
         // es6解决
-        for(let i=0; i<btns.length;i++){
-            btns[i].onclick = function(){
-                console.log(i)
-            }
+        // for(let i=0; i<btns.length;i++){
+        //     btns[i].onclick = function(){
+        //         console.log(i)
+        //     }
+        // }
+        for(var i=0; i < btns.length; i++){
+            (function(index){
+                btns[index].onclick = function() {
+                    console.log(index)
+                }
+            })(i)
         }
         // 闭包解决
         // for(var i=0;i<btns.length;i++){

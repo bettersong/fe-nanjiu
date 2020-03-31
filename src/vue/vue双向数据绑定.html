@@ -16,10 +16,15 @@
         var text = document.getElementById('text')
         var span = document.getElementById('show')
         var obj = {}
+        let _v
         Object.defineProperty(obj, 'hello', {
             set: function(value){
                 text.value = value
                 span.innerText = value
+                _v = value
+            },
+            get: () => {
+                return _v
             }
         })
         document.addEventListener('keyup',function(e){

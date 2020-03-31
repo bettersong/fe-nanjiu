@@ -29,6 +29,6 @@ var newArr3 = JSON.parse(JSON.stringify(arr3))
 arr3[0][2] = 6
 arr3[1].name = 'wawawa'
 console.log(arr3) //[ [ 1, 2, 6 ], { name: 'wawawa', age: 18 } ]
-console.log(newArr3) //[ [ 1, 2, 6 ], { name: 'wawawa', age: 18 } ]
+console.log(newArr3) //[ [ 1, 2, 6 ], { name: 'zhangsan', age: 18 } ]
 // 这样两个新旧数组就相互不会影响了，这就是引用类型数据的深拷贝，需要注意的是这个方法不能序列化方法，也就是说对于函数，这种方法是没用的
 
