@@ -32,9 +32,10 @@ function deepCopy(obj){
     }
     return newObj
 }
-var obj1 = {name: 'zhangsan',age:12}
+var obj1 = {name: 'zhangsan',age:12,like:[1,2,3,4]}
 var newObj1 = deepCopy(obj1)
 obj1.name = 'lisi'
+obj1.like = [2,2,2,2]
 console.log(obj1) //{ name: 'lisi', age: 12 }
 console.log(newObj1) //{ name: 'zhangsan', age: 12 }
 

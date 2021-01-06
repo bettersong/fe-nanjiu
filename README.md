@@ -1,5 +1,9 @@
 # 前端面试题每日3+1，以面试题来驱动自己
 
+在公众号也会推送面试题，更加方便阅读学习。
+
+![image-20191112215451969](https://blog-static.cnblogs.com/files/songyao666/wx_scan_sy.gif)
+
 #### day39
 
 - [day39 - 谈一谈浏览器的缓存机制？](https://github.com/bettersong/interview/issues/157)

@@ -26,6 +26,7 @@
                 _v = val
             }
         })
+        new Proxy(obj,{})
         input.addEventListener('keyup',(e) => {
             obj.name = e.target.value
             console.log(obj.name)

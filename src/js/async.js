@@ -24,7 +24,9 @@ async function wait(item,ms) {
     await timeOut(ms)
     console.log(item)
 }
-wait(3,5000)
+wait(3,5000).catch(err => {
+    console.log(err)
+})
 
 // function timeout(ms) {
 //     console.log(123)
