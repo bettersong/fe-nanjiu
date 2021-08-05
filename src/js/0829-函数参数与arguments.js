@@ -19,5 +19,18 @@ function fn(a,b){
     console.log(arguments[1])  //undefined
     console.log(arguments.callee)  //[Function: fn]  指向函数本身
     console.log(arguments.length)   //1 实参个数
+    console.log(this.name)
 }
-fn(1)  //这里的1就是实参
+//fn(1)  //这里的1就是实参
+const obj = {
+    name:'zhangsan'
+}
+// fn.call(obj,1,2,3)
+const res = fn.bind(obj,1,2)();
+console.log(res)
+// (function(){
+//     console.log(1111)
+// }())
+// (function(){
+//     console.log(this,2222)
+// })()
