@@ -23,5 +23,5 @@ var addTwoNumbers = function(l1, l2) {
     return res.split("").reverse().map(item=>parseInt(item))
 
 };
-
+console.log(1)
 console.log(addTwoNumbers([1,2,3,4],[4,5,6]))
