@@ -1,6 +1,31 @@
+
+// this指向
+var obj = {
+    a:function(){
+        console.log(this)
+        console.log(this.b)
+        console.log(this.c)
+        console.log(this.a)
+    },
+    b:2,
+    c:3
+}
+var b = obj.a
+b()
+// 结果：window,f(){...},undefined,undefined
+obj.a()
+// 结果：{a:..,b:2,c:3},2,3,f(){...}
+
+/**
+ * 解析：
+ * b()调用，此时b函数所处的执行环境是全局环境，this指向window
+ * obj.a()调用，此时a是作为对象方法进行调用，this指向调用对象obj
+ */
+
+
 // 模拟call
 Function.prototype.myCall = function(context){
-    // context指的是那个想要借方法的对象，并未它指定默认值，没传就是window
+    // context指的是那个想要借方法的对象，并为它指定默认值，没传就是window
     var context = context || window
     // 将要借用的那个方法绑定在当前要使用该方法的对象的fn属性上
     context.fn = this
