@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .box{
+            float:left;
+            width:180px;
+            height:180px;
+            background:rosybrown;
+            color:#fff;
+            margin: 60px;
+        }
+        */
+        
+        
+        /* IFC */
+        .text_container{
+            text-align: center;
+            line-height: 300px;
+            width: 100%;
+            height: 300px;
+            background-color: turquoise;
+            font-size: 0;
+        }
+        p{
+            line-height: normal;
+            display: inline-block;
+            vertical-align: middle;
+            background-color: coral;
+            font-size: 18px;
+            padding: 10px;
+            width: 360px;
+            color: #fff;
+        }
+        /* strong,span{
+            
+            background-color: cornflowerblue;
+            color:#fff;
+        } */
+        /* strong{
+            display:inline-block;
+            font-size: 18px;
+            padding:20px 0;
+            
+        }
+        span{
+            margin:30px 0;
+        } */
+        .magic{
+            display: grid;
+            grid-gap: 2px;
+            width:300px;
+            height:300px;
+        }
+        .magic div{
+            border: 1px solid coral;
+        }
+        .m_1{
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        .m_3{
+            grid-column-start: 2;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        .outer_box {
+            display:flex;
+            width:100%;
+        } 
+        .aside {
+            float: left;
+            width:180px;
+            height: 300px;
+            background:lightpink;
+        }
+        .container{
+            flex: 1;
+            height:400px;
+            background:mediumturquoise;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer_box">
+        <div class="aside">nanjiu</div>
+        <div class="container">南玖</div>
+    </div>
+    <!-- <div class="text_container">
+        <strong>众里寻他千百度，南玖需要你关注</strong>
+        <span>蓦然回首，那人却在，南玖前端交流群</span>
+    </div> -->
+    <!-- <div class="text_container">
+        <p>
+            东风夜放花千树，更吹落，星如雨。宝马雕车香满路。凤箫声动，玉壶光转，一夜鱼龙舞。蛾儿雪柳黄金缕，笑语盈盈暗香去。
+            <strong>众里寻他千百度，蓦然回首，那人却在，灯火阑珊处。</strong>
+        </p>
+    </div> -->
+    <!-- <div class="magic">
+        <div class="m_1">1</div>
+        <div class="m_2">2</div>
+        <div class="m_3">3</div>
+        <div class="m_4">4</div>
+        <div class="m_5">5</div>
+        <div class="m_6">6</div>
+        <div class="m_7">7</div>
+    </div> -->
+</body>
+</html>

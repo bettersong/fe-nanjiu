@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>圣杯布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .left {
+            width: 200px;
+            height: 500px;
+            background-color: yellow;
+            float: left;
+        }
+        .center {
+            height: 600px;
+            background-color: purple;
+            margin: 0 300px 0 200px;
+            min-width: 100px;
+            /* 最小宽度，防止浏览器缩小后中间部分被隐藏 */
+        }
+        .right {
+            width: 300px;
+            height: 500px;
+            background-color: red;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="left">Left</div>
+    <div class="right">Right</div>
+    <div class="center">Center</div> <!-- 左右部分脱离文档流，中间部分平铺 -->
+</body>
+
+</html>

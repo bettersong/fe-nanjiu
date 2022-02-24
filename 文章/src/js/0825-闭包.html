@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+
+    <script>
+        var btns = document.getElementsByTagName('button')
+        console.log(btns)
+        // for(var i=0; i < btns.length; i++){
+        //     btns[i].onclick = function() {
+        //         console.log(i)
+        //     }
+        // }
+        // es6解决
+        // for(let i=0; i<btns.length;i++){
+        //     btns[i].onclick = function(){
+        //         console.log(i)
+        //     }
+        // }
+        for(var i=0; i < btns.length; i++){
+            (function(index){
+                btns[index].onclick = function() {
+                    console.log(index)
+                }
+            })(i)
+        }
+        // 闭包解决
+        // for(var i=0;i<btns.length;i++){
+        //     // btns[i].onclick = function () {
+        //     //     console.log(i)
+        //     // }
+        //     btns[i].onclick = (function(j){
+        //         return function(){
+        //             console.log(j)
+        //         }
+        //     })(i)
+        // }
+        
+
+        // 闭包经典面试题
+        function fun(n, o){
+            console.log(o)
+            return {
+                fun: function(m){
+                    return fun(m,n)
+                }
+            }
+        }
+        var a = fun(0)  //undefined  0
+        a.fun(1) // function
+        a.fun(2)  // 
+        a.fun(3)
+
+        // var b = fun(0).fun(1).fun(2).fun(3)   //?
+        // var c = fun(0).fun(1)
+    </script>
+</body>
+</html>

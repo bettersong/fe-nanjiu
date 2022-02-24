@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{margin:50px;padding:0}
+        .parent{
+            width:100px;
+            height:100px;
+            border:1px solid #ccc;
+            position: relative;
+        }
+        .child{
+            position:absolute;
+            top:20px;
+            left:10px;
+        }
+        .pos{
+            position: absolute;
+            top:10px
+        }
+        .fixed{
+            position: fixed;
+            top:50px;
+            right:20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">
+            position
+            <!-- 这里如果父元素设置了position属性，那么它将相对于该父元素进行绝对定位 -->
+        </div>
+    </div>
+    <div class="pos">
+        position2
+        <!-- 这里父元素没有设置position属性，那么它将相对于窗口左上角进行定位 -->
+    </div>
+    
+    <div class="fixed">
+        2222
+        <!-- 设置了fixed属性的元素，将相对于视口区进行定位，并且不随页面滚动而滚动 -->
+    </div>
+</body>
+</html>

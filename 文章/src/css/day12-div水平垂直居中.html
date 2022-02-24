@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .parent{
+            width:200px;
+            height:200px;
+            border:1px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+        }
+        .parent2{
+            width:200px;
+            height:200px;
+            border: 1px solid pink;
+            position: relative
+        }
+        .child2{
+            position:absolute;
+            transform: translate(-50%,-50%);
+            top:50%;
+            left:50%;
+        }
+        .parent3{
+            width:200px;
+            height:200px;
+            display:table-cell;
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid cyan;
+        }
+        .child3{
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <!-- 方法一：
+        给父元素设置flex弹性布局，并且justify-content:center;align-items:center
+    -->
+    <div class="parent">
+        <div class="child">方法一</div>
+    </div>
+    <!-- 方法二：
+        利用定位于transform
+    -->
+    <div class="parent2">
+        <div class="child2">方法二</div>
+    </div>
+    <!-- 方法三
+        利用display: table-cell
+    -->
+    <div class="parent3">
+        <div class="child3">方法三</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,body{
+            height:500%;
+        }
+    </style>
+</head>
+<body>
+    
+    <button id="btn">点击</button>
+    <script>
+        /*
+    
+        函数节流：一个函数执行一次后，只有大于设定的执行周期后才会执行第二次
+            - 有个需要频繁触发的函数，出于性能角度，在规定时间内，之让函数触发的第一次执行，后面不在执行
+        */ 
+        /* 
+            节流函数：fn:要被节流的函数，delay：规定的时间
+        */
+        function throttle(fn,delay){}
+
+
+
+    //    function throttle(fn,delay){
+    //         // 记录上一次函数出发的时间
+    //         var lastTime = 0
+    //         return function(){
+    //         // 记录当前函数触发的时间
+    //         var nowTime = new Date().getTime()
+    //         // 当当前时间减去上一次执行时间大于这个指定间隔时间才让他触发这个函数
+    //         if(nowTime - lastTime > delay){
+    //             // 绑定this指向
+    //             fn.call(this)
+    //             //同步时间
+    //             lastTime = nowTime
+    //         }
+    //         }
+    //    }   
+       document.onscroll = throttle(function(){
+           console.log('节流'+new Date().getTime())
+       }, 1000)
+
+       /* 
+            防抖函数：一个需要频繁触发的函数，在规定时间内，只让最后一次生效，前面都不生效
+       */
+
+    //    function debounce(fn,delay){
+    //        var timer = null
+    //     //  清除上一次延时器
+    //       return function(){
+    //            clearTimeout(timer)
+    //           //  重新设置一个新的延时器
+    //           timer = setTimeout(() => {
+    //               fn.call(this)
+    //           }, delay);
+    //       }
+    //    }
+    //    document.getElementById('btn').onclick = debounce(function(){
+    //        console.log('函数防抖'+new Date().getTime())
+    //    },1000)
+
+    function debounce(fn,delay){
+         let timer = null
+         return function(){
+            const _that = this  // 解决回调函数的this指向问题
+            const arg = arguments // 解决获取参数问题
+            if(timer) clearTimeout(timer)
+            timer = setTimeout(function(){
+                fn.apply(_that,arg)
+            },delay)
+         }
+    }
+
+    document.onmousemove = debounce(function(e){
+        console.log('debounce',e)
+    },1000)
+    </script>
+</body>
+</html>
+
+

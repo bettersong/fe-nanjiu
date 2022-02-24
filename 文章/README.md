@@ -1,20 +1,8 @@
-
-
 # 前端面试题每日3+1，以面试题来驱动自己
-
-**另外，你可以在以下网站（点击图片跳转）关注我（你的关注是对我的肯定）：**
-
-[![公众号](https://img.shields.io/badge/%E5%85%AC%E4%BC%97%E5%8F%B7-%E5%89%8D%E7%AB%AF%E5%8D%97%E7%8E%96-brightgre?style=flat-square&logo=WeChat)](https://blog-static.cnblogs.com/files/songyao666/nanjiu.gif) [![掘金](https://img.shields.io/badge/%E6%8E%98%E9%87%91-%E5%8D%97%E7%8E%96-blue?style=flat-square)](https://juejin.cn/user/219558057873005/posts) [![博客园](https://img.shields.io/badge/%E5%8D%9A%E5%AE%A2%E5%9B%AD-%E5%8D%97%E7%8E%96-critical?style=flat-square)](https://www.cnblogs.com/songyao666/) [![个人站点](https://img.shields.io/badge/%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9-%E5%89%8D%E7%AB%AF%E5%8D%97%E7%8E%96-blueviolet?style=flat-square)](https://bettersong.github.io/)
 
 在公众号也会推送面试题，更加方便阅读学习。
 
-![image-20191112215451969](https://blog-static.cnblogs.com/files/songyao666/nanjiu.gif?t=2)
-
-
-
-[每日面试题点这里](<https://github.com/bettersong/interview/blob/master/src/md/1.md>)
-
-[南玖blog前端文章](https://juejin.cn/user/219558057873005/posts)
+![image-20191112215451969](https://blog-static.cnblogs.com/files/songyao666/wx_scan_sy.gif)
 
 #### day39
 
@@ -148,4 +136,9 @@
 - [day21-三句话道破JS原型链](https://github.com/bettersong/interview/issues/87)
 - [day21-手写一下节流函数与防抖函数](https://github.com/bettersong/interview/issues/88)
 
+
+
 #### [查看更多](<https://github.com/bettersong/interview/blob/master/src/md/1.md>)
+
+
+

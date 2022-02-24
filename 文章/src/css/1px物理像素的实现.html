@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0}
+        #box{
+            width:0.5rem;
+            height:0.5rem;
+            border-bottom:1px solid #ccc;
+        }
+        /* 
+            像素比 = 物理像素 / css像素
+         */
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <script>
+        // 像素比
+        var dpr = window.devicePixelRatio
+        console.log(dpr)
+        // 缩放比例
+        var scale = 1/dpr
+        // 屏幕区的宽
+        var width = document.documentElement.clientWidth
+        var metaNode = document.querySelector('meta[name="viewport"]')
+        console.log(metaNode)
+        metaNode.setAttribute('content','width=device-width, initial-scale=' + scale)
+
+        // 页面中的元素宽度，高度比例相反相乘回来
+        var htmlNode = document.querySelector('html')
+        htmlNode.style.fontSize = width * dpr + 'px'
+    </script>
+</body>
+</html>

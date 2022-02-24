@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 4.补充下面的代码，使得每个按钮点击后都弹出内容为对应序号的对话框(使用alert).
+
+                for(var i = 0; i < 10; i++) {
+                let btn = document.createElement("button");
+                btn.innerHTML = i;
+
+                // 请在此处实现按钮点击回调的内容，比如
+                btn.onclick = (function(j){
+                    return function(){
+                        alert(j)
+                    }
+                })(i)
+
+                document.body.appendChild(btn);
+            }    
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <span></span>
+    <script>
+        let input = document.getElementById('input')
+        let text = document.querySelector('span')
+        let obj = {}
+        let _v = null;
+        Object.defineProperty(obj,'name',{
+            get: () => {
+                // console.log(obj.name)
+                return _v;
+            },
+            set: (val) => {
+                console.log(val,'set')
+                input.value = val
+                text.innerText = val
+                _v = val
+            }
+        })
+        new Proxy(obj,{})
+        input.addEventListener('keyup',(e) => {
+            obj.name = e.target.value
+            console.log(obj.name)
+        })
+        // console.log(obj.name)
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            a:1,
+            b:2,
+            c:function(){
+                console.log(this)
+                console.log(this.a)
+                console.log(this.b)
+                console.log(this.c)
+            },
+            d:()=>{
+                console.log(this)
+                console.log(this.a)
+                console.log(this.b)
+                console.log(this.c)
+            }
+        }
+
+        var c = obj.c
+        var d = obj.d
+        c()    // window,undefined,undefined,f(){}
+        d()    // window,undefined,undefined,f(){}
+        obj.c() //obj, 1,2,f(){}
+        obj.d() //window,undefined,undefined,f(){}
+
+        console.log('------------------------------------')
+        var obj = {
+            hi: function(){
+                console.log(this);
+                return ()=>{
+                    console.log(this);
+                }
+            },
+            sayHi: function(){
+                return function() {
+                    console.log(this);
+                    return ()=>{
+                        console.log(this);
+                    }
+                }
+            },
+            say: ()=>{
+                console.log(this);
+            }
+        }
+        const hi = obj.hi()   //this->obj对象
+        hi()   // this->obj对象
+        const sayHi = obj.sayHi()
+        const sayHiBack = sayHi()  //this->window
+        sayHiBack() //this->window
+        obj.say() //this->window
+
+        console.log('----------------------------')
+
+        var person = {
+            name:'南玖',
+            gender: 'boy',
+        }
+        var speak = function(age,hobbit){
+            console.log(`我是${this.name}，今年${age}岁，爱好${hobbit}，欢迎优秀的你关注～`)
+        }
+        speak.call(person,18,'前端开发') // 我是南玖，今年18岁，爱好前端开发，欢迎优秀的你关注～
+        speak.apply(person,[18,'打篮球⛹️']) //我是南玖，今年18岁，爱好打篮球⛹️，欢迎优秀的你关注～
+        speak.bind(person,18,'旅游⛱️')() //我是南玖，今年18岁，爱好旅游⛱️，欢迎优秀的你关注～
+
+        console.log('----------------------')
+
+        for(var i=1;i<6;i++){
+            setTimeout(()=>{
+                console.log(i)  // 6,6,6,6,6
+            },i*1000)
+        }
+        // 相信大家都知道这里会打印出五个6，因为在执行settimeout回调函数时，i已经变成了6
+        // 那么如何让它打印出1，2，3，4，5呢？
+        // 当然方法有很多，比如闭包，将var改成let使它形成块级作用域，这里先不讲，后面单独讲闭包会提出来
+        // 我们也可以用bind来解决
+        for(var i=1;i<6;i++){
+            setTimeout(function(i){
+                console.log(i)  // 1，2，3，4，5
+            }.bind(null,i),i*1000)
+        }
+
+        var student = {
+            subject:['JS','VUE','REACT'],
+            study: function(){
+                setTimeout(function(){
+                    console.log(`我是南玖，我在学习${this.subject.join('、')}`)
+                }.bind(this),0)
+            }
+        }
+        student.study()
+        console.log('-------------------------------')
+        
+    </script>
+</body>
+</html>
