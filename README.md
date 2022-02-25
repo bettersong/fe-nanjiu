@@ -21,6 +21,4 @@
 - [day39 - 同步和异步的区别？](https://github.com/bettersong/interview/issues/159)
 - [day39 - 什么是浏览器的同源政策？](https://github.com/bettersong/interview/issues/160)
 
-- https://github.com/bettersong/interview/issues/88)
-
 #### [查看更多](<https://github.com/bettersong/interview/blob/master/src/md/2.md>)
