@@ -49,5 +49,41 @@ function initData(vm) {
     // Object.definePropety() 给属性增加get和set方法
     observe(data)  //响应式原理
 }
-function initComputed(vm) {}
+function initComputed(vm) {
+    /**
+     * 初始化computed配置项
+     * 为每一个计算属性实例化一个 watcher，并将计算属性代理到vue 实例上
+     * 结合watcher.dirty 和 watcher.evaluate 实现computed缓存
+     */
+    
+    // 获取配置项
+    const computed = vm.$options.computed
+    // 记录watcher
+    const watcher = vm._watcher = Object.create(null)
+    for(let key in computed) {
+        // 实例化watcher，回调函数默认懒执行
+       watcher[key] =  new Watcher(computed[key], {lazy:true}, vm)
+       // 将computed 属性key 代理到 Vue实例上
+       defineComputed(vm,key)
+    }
+}
+function defineComputed(vm, key) {
+    // 将计算属性代理到 Vue实例上， 就可以通过vm.xxx进行访问
+    Object.defineProperty(vm,key,{
+        get: function() {
+            // 缓存原理
+            const watcher = vm._watcher[key]
+            if(watcher.dirty) {
+                // 当前computed回调函数在本次渲染周期内没有执行过
+                // 执行 evaluate，通知watcher 执行computed回调函数，得到回调函数的返回值
+                watcher.evaluate()
+            }
+            return watcher.value
+        },
+        set: function() {
+            console.log('no setter: nanjiu')
+        }
+    })
+}
+
 function initWatch(vm) {}
