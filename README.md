@@ -25,6 +25,6 @@
 - [day39 - 谈一谈浏览器的缓存机制？](https://github.com/bettersong/interview/issues/157)
 - [day39 - Ajax 解决浏览器缓存问题？](https://github.com/bettersong/interview/issues/158)
 - [day39 - 同步和异步的区别？](https://github.com/bettersong/interview/issues/159)
-- [day39 - 什么是浏览器的同源政策？](https://github.com/bettersong/interview/issues/160)
+- [day39 - 什么是浏览器的同源策略？](https://github.com/bettersong/interview/issues/160)
 
 #### [查看更多](<https://github.com/bettersong/interview/blob/master/src/md/2.md>)
