@@ -17,7 +17,7 @@
 #### day40
 
 - [day40 - CSS优先级是如何计算的？](https://github.com/bettersong/interview/issues/163)
-- [day40 - 说一说你用过的CSS与处理器，原理是什么？](https://github.com/bettersong/interview/issues/162)
+- [day40 - 说一说你用过的CSS预处理器，原理是什么？](https://github.com/bettersong/interview/issues/162)
 - [day40 - 如何判断设备来源？](https://github.com/bettersong/interview/issues/161)
 
 #### day39
