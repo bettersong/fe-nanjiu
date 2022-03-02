@@ -14,6 +14,12 @@
 
 [【每日面试题点这里】](<https://github.com/bettersong/interview/blob/master/src/md/1.md>)    [【南玖blog前端文章】](https://juejin.cn/user/219558057873005/posts)   [【前端推荐书籍】](<https://github.com/bettersong/interview/blob/master/书籍.md>)
 
+#### day40
+
+- [day40 - CSS优先级是如何计算的？](https://github.com/bettersong/interview/issues/163)
+- [day40 - 说一说你用过的CSS与处理器，原理是什么？](https://github.com/bettersong/interview/issues/162)
+- [day40 - 如何判断设备来源？](https://github.com/bettersong/interview/issues/161)
+
 #### day39
 
 - [day39 - 谈一谈浏览器的缓存机制？](https://github.com/bettersong/interview/issues/157)
