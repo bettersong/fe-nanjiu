@@ -14,6 +14,12 @@
 
 [【每日面试题点这里】](<https://github.com/bettersong/interview/blob/master/src/md/1.md>)    [【南玖blog前端文章】](https://juejin.cn/user/219558057873005/posts)   [【前端推荐书籍】](<https://github.com/bettersong/interview/blob/master/书籍.md>)
 
+#### day41
+
+- [day41 - 前端常见的排序算法 ](https://github.com/bettersong/interview/issues/164)
+- [day41 - `<img>`的title和alt有什么区别？](https://github.com/bettersong/interview/issues/165)
+- [day41 - 说一说从浏览器地址栏输入 url 到显示页面的步骤？](https://github.com/bettersong/interview/issues/166)
+
 #### day40
 
 - [day40 - CSS优先级是如何计算的？](https://github.com/bettersong/interview/issues/163)
