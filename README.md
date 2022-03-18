@@ -13,6 +13,12 @@
 
 [【每日面试题点这里】](<https://github.com/bettersong/interview/blob/master/src/md/1.md>)    [【南玖blog前端文章】](https://juejin.cn/user/219558057873005/posts)   [【前端推荐书籍】](<https://github.com/bettersong/interview/blob/master/书籍.md>)
 
+
+
+- [介绍下 Set、Map、WeakSet 和 WeakMap 的区别？](https://github.com/bettersong/interview/issues/169)
+- [Vue 中的 computed 和 watch 的区别在哪里? ](https://github.com/bettersong/interview/issues/168)
+- [webpack 中 loader 和 plugin 的区别是什么?](https://github.com/bettersong/interview/issues/167)
+
 #### day41
 
 - [day41 - 前端常见的排序算法 ](https://github.com/bettersong/interview/issues/164)
