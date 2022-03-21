@@ -17,9 +17,9 @@
 
 
 
-- [介绍下 Set、Map、WeakSet 和 WeakMap 的区别？](https://github.com/bettersong/interview/issues/169)
-- [Vue 中的 computed 和 watch 的区别在哪里? ](https://github.com/bettersong/interview/issues/168)
-- [webpack 中 loader 和 plugin 的区别是什么?](https://github.com/bettersong/interview/issues/167)
+- [169 - 介绍下 Set、Map、WeakSet 和 WeakMap 的区别？](https://github.com/bettersong/interview/issues/169)
+- [168 - Vue 中的 computed 和 watch 的区别在哪里? ](https://github.com/bettersong/interview/issues/168)
+- [167 - webpack 中 loader 和 plugin 的区别是什么?](https://github.com/bettersong/interview/issues/167)
 
 #### day41
 
