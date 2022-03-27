@@ -13,7 +13,7 @@
 
 | [【每日面试题点这里】](<https://github.com/bettersong/interview/blob/master/src/md/1.md>) |  [【南玖blog前端文章】](https://juejin.cn/user/219558057873005/posts) | [【前端推荐书籍】](<https://github.com/bettersong/interview/blob/master/书籍.md>) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [【常见手写面试题】](https://mp.weixin.qq.com/s/gd0UOGiyMZ8tgb-ta728RQ) |  [【超全面总结Vue面试知识点】](https://mp.weixin.qq.com/s/rqw3W-cMRdtkTDKtmhF7ng)                                                            | [【前端常见的排序算法】](https://mp.weixin.qq.com/s/1IluMVgZ3yzpwu2sVksRCg)                                                             |
+| [【常见手写面试题】](https://mp.weixin.qq.com/s/gd0UOGiyMZ8tgb-ta728RQ) |  [【超全面总结Vue面试知识点】](https://juejin.cn/post/7075130658820980772)                                                            | [【前端常见的排序算法】](https://mp.weixin.qq.com/s/1IluMVgZ3yzpwu2sVksRCg)                                                             |
 
 
 
