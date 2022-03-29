@@ -17,6 +17,12 @@
 
 
 
+#### day44
+
+- [175 - 说说vue中深度监听（deep-watch）的原理](https://github.com/bettersong/interview/issues/175)
+- [174 - 说说你对深度优先遍历(DFS)与广度优先遍历(BFS)的理解](https://github.com/bettersong/interview/issues/174)
+- [173 - 说说vue的自定义指令以及它的生命周期](https://github.com/bettersong/interview/issues/173)
+
 #### day43
 
 - [172 - 页面布局时是不是节点越少越好？为什么？](https://github.com/bettersong/interview/issues/172)
