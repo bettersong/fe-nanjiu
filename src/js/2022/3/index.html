@@ -3,19 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <title>Document</title>
     <style>
+        *{margin:0;padding:0}
         .box{
-            height: 8px;
-            line-height: 18px;
+            width: 10rem;
+            height: 4rem;
             background-color: antiquewhite;
-            font-size: 8px;
+            font-size: 0.53rem; /* 20px*/
         }
     </style>
+    <script>
+        function setRootRem() {
+            const root = document.documentElement;
+            /** 以iPhone6为例：布局视口为375px，我们把它分成10份，则1rem = 37.5px，
+             * 这时UI给定一个元素的宽为375px（设备独立像素），
+             * 我们只需要将它设置为375 / 37.5 = 10rem。
+            */
+            const scale = root.clientWidth / 10
+            root.style.fontSize = scale + 'px'  
+        }
+        setRootRem()
+        window.addEventListener('resize', setRootRem)
+        // function initViewport() {
+        //     const width = 375;
+        //     const scale = screen.width / width
+        //     console.log('scale', screen.width, scale)
+        //     let meta = document.querySelector('meta[name=viewport]')
+        //     let content = `width=${width}, init-scale=${scale}, user-scalable=no`
+        //     if(!meta) {
+        //         meta = document.createElement('meta')
+        //         meta.setAttribute('name', 'viewport')
+        //         document.head.appendChild(meta)
+        //     }
+        //     meta.setAttribute('content', content)
+        // }
+        // initViewport()
+        // window.addEventListener('resize', initViewport)
+    </script>
 </head>
 <body>
-    <div class="box">o</div>
-    <script src="./5.WeakMap.js"></script>
+    <div class="box">前端南玖</div>
 </body>
 </html>
