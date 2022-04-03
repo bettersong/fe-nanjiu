@@ -17,6 +17,13 @@
 
 
 
+#### day45
+
+- [178 - 通用组件除了以包的形式还可以用什么方式](https://github.com/bettersong/interview/issues/178)
+- [177 - 说说性能优化有哪些手段](https://github.com/bettersong/interview/issues/177)
+
+- [176 - 说说你对viewport的理解？](https://github.com/bettersong/interview/issues/176)
+
 #### day44
 
 - [175 - 说说vue中深度监听（deep-watch）的原理](https://github.com/bettersong/interview/issues/175)
