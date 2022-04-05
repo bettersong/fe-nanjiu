@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
-import {toRem,initViewport} from "./utils/toRem"
+import {toRem} from "./utils/toRem"
 toRem()
-initViewport()
+// initViewport()
 window.addEventListener('resize', () => {
   toRem()
   // initViewport()

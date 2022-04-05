@@ -15,7 +15,11 @@
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [【常见手写面试题】](https://mp.weixin.qq.com/s/gd0UOGiyMZ8tgb-ta728RQ) |  [【超全面总结Vue面试知识点】](https://juejin.cn/post/7075130658820980772)                                                            | [【前端常见的排序算法】](https://mp.weixin.qq.com/s/1IluMVgZ3yzpwu2sVksRCg)                                                             |
 
+#### day46
 
+- [181 - 手写一个带有并发限制的异步调度器](https://github.com/bettersong/interview/issues/181)
+- [180 - 手写一下JSON.stringify的实现](https://github.com/bettersong/interview/issues/180) 
+- [179 - 说说你对H5移动端适配的理解](https://github.com/bettersong/interview/issues/179)
 
 #### day45
 

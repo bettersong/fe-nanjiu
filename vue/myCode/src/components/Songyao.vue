@@ -1,8 +1,8 @@
 <template>
     <div class="songyao">
         <h1 class="name_rem">{{ username + 'rem' }}</h1>
-        <h1 class="name_vw">{{ username + 'vw' }}</h1>
-        <h1 class="name_px">{{ username + 'px' }}</h1>
+        <!-- <h1 class="name_vw">{{ username + 'vw' }}</h1>
+        <h1 class="name_px">{{ username + 'px' }}</h1> -->
     <p>
       了解脚手架及脚手架指令请移步个人博客<br>
       check out the

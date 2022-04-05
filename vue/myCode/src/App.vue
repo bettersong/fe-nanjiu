@@ -11,7 +11,7 @@ export default {
   name: 'app',
   components: {
     Songyao
-  }
+  },
 }
 </script>
 
@@ -25,7 +25,7 @@ export default {
   margin-top: 60px;
 }
 .my_img{
-  width: (200*@vw);
+  width: (200/@rem);
   height: (200/@rem);
   border-radius: 50%;
 }
