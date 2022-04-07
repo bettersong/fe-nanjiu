@@ -5,11 +5,87 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .trangle{
+            width:0;
+            height:0;
+            border-width: 20px;
+            border-style: solid;
+            border-color: transparent transparent turquoise transparent;
+            /* 将元素的宽高设为0，相邻边框连接处均分 */
+        }
+        .img_box{
+            display: block;
+            width: 300px;
+            height: 160px;
+            margin:0 auto 20px;
+            border: 1px solid #ccc;
+            /* object-fit: cover; */
+        }
+        .box{
+            width:200px;
+            height:200px;
+            background:salmon;
+            margin:700px auto 1000px;
+        }
+        .fixed_head{
+            position: fixed;
+            top:0;
+            left:0;
+            width:100%;
+            padding:10px 0;
+            color:#fff;
+            text-align: center;
+        }
+        .title{
+            text-align: center;
+            margin:20px 0;
+        }
+    </style>
 </head>
 <body>
-    <span>前端南玖</span>
-    <span>前端南玖</span>
-    <div>hahahahahah</div>
-    <script src="./6.实现一下Promise.all.js"></script>
+    <!-- <span>前端南玖</span>
+    <span>前端南玖</span> -->
+    <!-- <div id="head" class="fixed_head">图片懒加载<span id="text"></span></div> -->
+    <div class="title">图片懒加载</div>
+    <!-- <div class="box"></div> -->
+    <!-- <div class="trangle"></div> -->
+    <div class="img_list">
+        <img class="img_box" src="./images/default.gif" data-src="./images/1.png"/>
+        <img class="img_box" src="./images/default.gif" data-src="./images/2.jpg"/>
+        <img class="img_box" src="./images/default.gif" data-src="./images/3.jpg"/>
+        <img class="img_box" src="./images/default.gif" data-src="./images/4.jpg"/>
+        <img class="img_box" src="./images/default.gif" data-src="./images/5.jpg"/>
+        <img class="img_box" src="./images/default.gif" data-src="./images/6.png"/>
+        <img class="img_box" src="./images/default.gif" data-src="./images/7.png"/>
+        <img class="img_box" src="./images/default.gif" data-src="./images/8.jpeg"/>
+        <img class="img_box" src="./images/default.gif" data-src="./images/9.png"/>
+        <img class="img_box" src="./images/default.gif" data-src="./images/10.jpg"/>
+        <img class="img_box" src="./images/default.gif" data-src="./images/11.jpeg"/>
+        <img class="img_box" src="./images/default.gif" data-src="./images/12.jpg"/>
+        <img class="img_box" src="./images/default.gif" data-src="./images/13.jpeg"/>
+        <img class="img_box" src="./images/default.gif" data-src="./images/14.jpeg"/>
+        <img class="img_box" src="./images/default.gif" data-src="./images/15.jpeg"/>
+    </div>
+    <script src="./11.图片懒加载.js"></script>
+    <script>
+        
+        // function isVisible() {
+        //     const boxRect = document.querySelector('.box').getBoundingClientRect()
+        //     // console.log(box.getBoundingClientRect())
+        //     document.querySelector('.box').childNodes
+        //     const viewHeight = document.documentElement.clientHeight;
+        //     if(boxRect.top <= viewHeight && boxRect.bottom >= 0) {
+        //        text.innerText = 'visible'
+        //        head.style.backgroundColor = 'green'
+        //         // console.log(head.childNodes.innerText = 'visible')
+        //     }else{
+        //         text.innerText = 'Invisible'
+        //         head.style.backgroundColor = 'red'
+        //     }
+        // }
+        // isVisible()
+        // window.addEventListener('scroll', isVisible)
+    </script>
 </body>
 </html>

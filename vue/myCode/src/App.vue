@@ -1,28 +1,30 @@
 <template>
   <div id="app">
-    <img class="my_img" alt="Vue logo" src="./assets/my.jpg">
-    <Songyao />
+    <!-- <img class="my_img" alt="Vue logo" src="./assets/my.jpg"> -->
+    <!-- <Songyao /> -->
+    <div class="title">实现v-lazy</div>
+    <img-list />
   </div>
 </template>
 
 <script>
-import Songyao from './components/Songyao'
+// import Songyao from './components/Songyao'
+import imgList from "./components/imgList.vue"
 export default {
   name: 'app',
   components: {
-    Songyao
+    // Songyao
+    imgList
   },
 }
 </script>
 
 <style lang="less">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#app{
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+.title{
+  font-size: (24/@rem);
 }
 .my_img{
   width: (200/@rem);
