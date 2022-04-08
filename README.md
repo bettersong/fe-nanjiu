@@ -15,6 +15,12 @@
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [【常见手写面试题】](https://mp.weixin.qq.com/s/gd0UOGiyMZ8tgb-ta728RQ) |  [【超全面总结Vue面试知识点】](https://juejin.cn/post/7075130658820980772)                                                            | [【前端常见的排序算法】](https://mp.weixin.qq.com/s/1IluMVgZ3yzpwu2sVksRCg)                                                             |
 
+#### day47
+
+- [184 - 懒加载原理，IntersectionObserver用过吗？](https://github.com/bettersong/interview/issues/184)
+- [183 - webpack代码压缩是怎么做的，用了哪些插件？](https://github.com/bettersong/interview/issues/183)
+- [182 - 行内元素的padding和margin是否有效?](https://github.com/bettersong/interview/issues/182)
+
 #### day46
 
 - [181 - 手写一个带有并发限制的异步调度器](https://github.com/bettersong/interview/issues/181)
