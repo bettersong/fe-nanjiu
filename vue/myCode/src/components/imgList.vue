@@ -27,6 +27,26 @@ export default {
 
             ])
         }
+    },
+    mounted() {
+        const src = require("../../../../src/js/2022/4/images/15.jpeg")
+        const img = new Image()
+
+        // img.src = require("../../../../src/js/2022/4/images/15.jpeg")
+
+        img.onload = function(e) {
+            console.log('111', e)
+        }
+
+        img.src = src
+        img.src = src
+
+        setTimeout(()=> {
+            img.src = src
+        },1000)
+        // img.onload = function(e) {
+        //     console.log('222', e)
+        // }
     }
 }
 </script>
