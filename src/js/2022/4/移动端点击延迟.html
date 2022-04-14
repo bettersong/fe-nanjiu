@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> -->
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;}
+        .container {
+            overflow: hidden;
+        }
+        .center {
+            float: left;
+            box-sizing: border-box;
+            width:100%;
+            height: 500px;
+            padding:0 300px;
+            background: salmon;
+
+        }
+        .left{
+            float: left;
+            width:300px;
+            height:500px;
+            margin-left: -100%;
+            background:lavenderblush;
+        }
+        .right{
+            float: left;
+            width:300px;
+            height:500px;
+            margin-left:-300px;
+            background:rosybrown;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="center">中间</div>
+        <div class="left">左边侧栏</div>
+        <div class="right">右边侧栏</div>
+    </div>
+    
+
+    <script>
+        // let t1, t2
+        // title.ontouchstart = function(e) {
+        //     t1 = +new Date()
+        //     console.log('touchstart')
+        // }
+
+        // title.onclick = function(e) {
+        //     console.log('click', +new Date() - t1)
+        // }
+
+        // // FastClick简单实现
+        // let targetElement = null;
+        // title.addEventListener('touchstart', function () {
+        //     // 记录点击的元素
+        //     targetElement = event.target;
+        // });
+        // title.addEventListener('touchend', function (event) {
+        //     // 阻止默认事件（屏蔽之后的click事件）
+        //     event.preventDefault();
+        //     let touch = event.changedTouches[0];
+        //     // 合成click事件，并添加可跟踪属性forwardedTouchEvent
+        //     let clickEvent = document.createEvent('MouseEvents');
+        //     clickEvent.initMouseEvent('click', true, true, window, 1, touch.screenX, touch.screenY, touch.clientX, touch.clientY, false, false, false, false, 0, null);
+        //     clickEvent.forwardedTouchEvent = true;
+        //     targetElement.dispatchEvent(clickEvent);
+        // });
+    </script>
+</body>
+</html>

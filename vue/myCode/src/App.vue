@@ -2,7 +2,8 @@
   <div id="app">
     <!-- <img class="my_img" alt="Vue logo" src="./assets/my.jpg"> -->
     <!-- <Songyao /> -->
-    <div class="title">实现v-lazy</div>
+    <div class="title" ref="title">实现v-lazy </div>
+    <div>{{t3}}</div>
     <img-list />
   </div>
 </template>
@@ -16,6 +17,30 @@ export default {
     // Songyao
     imgList
   },
+  data() {
+    return {
+      t1:0,
+      t2:0,
+    }
+  },
+  computed: {
+    t3() {
+      return this.t1 + this.t2
+    }
+  },
+  mounted() {
+    const title = this.$refs.title
+
+    title.ontouchstart = function() {
+      this.t1 = +new Date()
+      console.log('touchstart')
+    }
+    title.onclick = function () {
+      this.t2 = +new Date()
+      console.log('click')
+      console.log(this.t2-this.t1)
+    }
+  }
 }
 </script>
 
