@@ -392,9 +392,9 @@ dom.offsetWidth/offsetHeight【常用】
 
 推荐阅读[介绍回流与重绘（Reflow & Repaint），以及如何进行优化?](https://juejin.cn/post/7064077572132323365)
 
-### 什么是回流（Reflow）与重绘（Repaint）？
+###  什么是回流（Reflow）与重绘（Repaint）？
 
-####回流（Reflow）
+#### 回流（Reflow）
 
 当渲染树`render tree`中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建。这就称为**回流(reflow)**。每个页面至少需要一次回流，就是在页面第一次加载的时候，这时候是一定会发生回流的，因为要构建`render tree`。在回流的时候，浏览器会使渲染树中受到影响的部分失效，并重新构造这部分渲染树，完成回流后，浏览器会重新绘制受影响的部分到屏幕中，该过程称为**重绘**。
 
@@ -402,13 +402,13 @@ dom.offsetWidth/offsetHeight【常用】
 
 **回流的代价要远大于重绘。并且回流必然会造成重绘，但重绘不一定会造成回流。**
 
-####重绘（Repaint）
+#### 重绘（Repaint）
 
 当渲染树`render tree`中的一些元素需要更新样式，但这些样式属性只是改变元素的外观，风格，而不会影响布局的，比如`background-color`。则就叫称为**重绘(repaint)**。
 
 **简单来说，重绘就是将渲染树节点转换为屏幕上的实际像素，不涉及重新布局阶段的位置与大小计算**
 
-###为什么不建议频繁操作DOM？
+### 为什么不建议频繁操作DOM？
 
 我们都知道操作DOM其实是非常耗性能的，所以我们**不仅要避免去操作DOM，还要减少访问DOM的次数。**
 
@@ -416,9 +416,9 @@ dom.offsetWidth/offsetHeight【常用】
 
 > 把DOM和JavaScript各自想象成一个岛屿，它们之间用收费桥梁连接。 --《高性能JavaScript》
 
-###何时会发生回流（Reflow）与重绘（Repaint）？
+### 何时会发生回流（Reflow）与重绘（Repaint）？
 
-####会导致回流的操作：
+#### 会导致回流的操作：
 
 - 页面首次渲染（无法避免且开销最大的一次）
 - 浏览器窗口大小发生改变（resize事件）
@@ -442,11 +442,11 @@ dom.offsetWidth/offsetHeight【常用】
 | scrollIntoView()        | scrollTo()               | getComputedStyle() |            |
 | getBoundingClientRect() | scrollIntoViewIfNeeded() |                    |            |
 
-####为什么获取一些属性或调用方法也会导致回流？
+#### 为什么获取一些属性或调用方法也会导致回流？
 
 因为以上属性和方法都需要返回最新的布局信息，因此浏览器不得不触发回流重绘来返回正确的值。
 
-####会导致重绘的属性
+#### 会导致重绘的属性
 
 | 属性：          | --               | --                  | --                |
 | --------------- | ---------------- | ------------------- | ----------------- |
@@ -457,7 +457,7 @@ dom.offsetWidth/offsetHeight【常用】
 
 具体可以在这个网站查找[CSS Triggers](https://link.juejin.cn?target=https%3A%2F%2Fcsstriggers.com%2F)
 
-###浏览器的优化机制
+### 浏览器的优化机制
 
 由于每次重排都会造成额外的计算消耗，因此大多数浏览器都会通过队列化修改并批量执行来优化重排过程。浏览器会将修改操作放入到队列里，直到过了一段时间或者操作达到了一个阈值，才会进行批量修改并清空队列。但是，**在获取布局信息的时候，会强制刷新队列**，比如当你访问以下属性或者使用以下方法：
 
@@ -472,7 +472,7 @@ dom.offsetWidth/offsetHeight【常用】
 
 ###如何减少回流（Reflow）与重绘（Repaint）？（优化）
 
-####合并对`DOM`样式的修改，采用`css class`来修改
+#### 合并对`DOM`样式的修改，采用`css class`来修改
 
 ```js
 const el = document.querySelector('.box')
@@ -501,7 +501,7 @@ el.classList.add('update')
 
 **CSS选择符从右往左匹配查找，避免节点层级过多**
 
-####DOM离线处理，减少回流重绘次数
+#### DOM离线处理，减少回流重绘次数
 
 **离线的DOM不属于当前DOM树中的任何一部分，这也就意味着我们对离线DOM处理就不会引起页面的回流与重绘。**
 
@@ -539,11 +539,11 @@ el.parentElement.replaceChild(cloneEl,el)
 复制代码
 ```
 
-####DOM脱离普通文档流
+#### DOM脱离普通文档流
 
 使用`absoult`或`fixed`让元素脱离普通文档流，使用绝对定位会使的该元素单独成为渲染树中 `body` 的一个子元素，重排开销比较小，不会对其它节点造成太多影响。
 
-####CSS3硬件加速（GPU加速）
+#### CSS3硬件加速（GPU加速）
 
 使用css3硬件加速，可以让`transform、opacity、filters`这些动画不会引起回流重绘 。但是对于动画的其它属性，比如`background-color`这些，还是会引起回流重绘的，不过它还是可以提升这些动画的性能。
 
