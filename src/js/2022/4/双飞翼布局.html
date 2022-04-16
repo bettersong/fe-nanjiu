@@ -42,5 +42,27 @@
 
     <div class="left">左边侧栏</div>
     <div class="right">右边侧栏</div>
+    <script>
+        requestAnimationFrame(() => {
+            console.log('requestAnimationFrame',1)
+        })
+        requestAnimationFrame(() => {
+            console.log('requestAnimationFrame',2)
+        })
+        setTimeout(()=> {
+            console.log('settimeout')
+        })
+        new Promise((resolve,reject) => {
+            console.log(3)
+            resolve(4)
+        }).then(res => {
+            console.log('promise.then',res)
+        })
+
+        requestAnimationFrame(() => {
+            console.log('requestAnimationFrame',5)
+        })
+
+    </script>
 </body>
 </html>
