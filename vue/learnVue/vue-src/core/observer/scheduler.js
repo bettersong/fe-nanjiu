@@ -164,10 +164,12 @@ export function queueWatcher (watcher: Watcher) {
   /*检验id是否存在，已经存在则直接跳过，不存在则标记哈希表has，用于下次检验*/
   if (has[id] == null) {
     has[id] = true
+    // 如果flushing为false， 表示当前watcher队列没有在被刷新，则watcher直接入队列
     if (!flushing) {
-      /*如果没有flush掉，直接push到队列中即可*/
       queue.push(watcher)
     } else {
+      // 如果watcher队列已经在被刷新了，这时候想要插入新的watcher就需要特殊处理
+      //保证新入队的watcher刷新仍然是有序的
       // if already flushing, splice the watcher based on its id
       // if already past its id, it will be run next immediately.
       let i = queue.length - 1
@@ -178,7 +180,9 @@ export function queueWatcher (watcher: Watcher) {
     }
     // queue the flush
     if (!waiting) {
+      // wating为false，表示当前浏览器的异步任务队列中没有flushSchedulerQueue函数
       waiting = true
+      // 这就是我们常见的this.$nextTick
       nextTick(flushSchedulerQueue)
     }
   }

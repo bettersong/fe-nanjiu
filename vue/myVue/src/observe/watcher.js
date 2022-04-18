@@ -45,7 +45,17 @@ export default class Watcher{
     }
     // 当依赖发生变化时，触发更新
     update() {
-        this.run()
+        if(this.lazy) {
+            // 懒执行会走这里, 比如computed
+            this.dirty = true
+        }else if(this.sync) {
+            // 同步执行会走这里，比如this.$watch() 或watch选项，传递一个sync配置{sync: true}
+            this.run()
+        }else {
+            // 将当前watcher放入watcher队列， 一般都是走这里
+            queueWatcher(this)
+        }
+        
     }
     run() {
         this.getAndInvoke(this.cb)
