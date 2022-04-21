@@ -16,6 +16,12 @@
 | [【前端工程化】](https://github.com/bettersong/interview/blob/master/md/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/index.md) | [【网络&安全】](https://github.com/bettersong/interview/blob/master/md/%E7%BD%91%E7%BB%9C%26%E5%AE%89%E5%85%A8/index.md) | [【性能优化】]  (待更新)                                     |
 | [【浏览器】]（待更新）                                       | [【hybrid】]  (待更新)                                       |                                                              |
 
+#### day49
+
+- [190 - 对象数组转树结构](https://github.com/bettersong/interview/issues/190)
+- [189 - webpack打包时怎么给script标签加上async、defer属性？](https://github.com/bettersong/interview/issues/189)
+- [188 - vue同时更新了多个数据,dom是更新多次还是更新一次?](https://github.com/bettersong/interview/issues/188)
+
 #### day48
 
 - [187 - HTTP请求并发限制](https://github.com/bettersong/interview/issues/187)
