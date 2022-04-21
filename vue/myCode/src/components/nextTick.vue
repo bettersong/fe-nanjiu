@@ -15,6 +15,11 @@ export default {
             count:0
         }
     },
+    watch: {
+        name(nv) {
+            console.log(nv)
+        }
+    },
     mounted() {
         this.name = 'front end'
         this.verse = '世间万物都是空，功名利禄似如风'
