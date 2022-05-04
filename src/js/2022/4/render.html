@@ -9,6 +9,8 @@
 <body>
     <div id="title">欲试人间烟火，怎料世道沧桑</div>
 
+
+    <script src="./13.iterator.js"></script>
     <script>
         // title.innerText = '万卷诗书无一用，半老雄心剩疏狂'
         // console.log('updated',title)
@@ -62,22 +64,22 @@
         // })
         // console.log('script end')
 
-        var a = 1
+        // var a = 1
 
-        function test() {
-            console.log('script start')
+        // function test() {
+        //     console.log('script start')
 
-            setTimeout(() => {
-                console.log(this.a,'s')
-            },10)
+        //     setTimeout(() => {
+        //         console.log(this.a,'s')
+        //     },10)
 
-            setTimeout(function() {
-                console.log(this.a, 'q')
-            },0)
-            console.log('script end')
-        }
+        //     setTimeout(function() {
+        //         console.log(this.a, 'q')
+        //     },0)
+        //     console.log('script end')
+        // }
 
-        test.call({a: 2})
+        // test.call({a: 2})
 
     </script>
 </body>
