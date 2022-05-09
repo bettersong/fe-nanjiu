@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <next/> 
+    <div class="btn" @click="getDataByAxios">发起请求</div>
     <!-- <img class="my_img" alt="Vue logo" src="./assets/my.jpg"> -->
     <!-- <Songyao /> -->
     <!-- <div class="title" ref="title">实现v-lazy </div>
@@ -15,6 +16,9 @@
 // import Songyao from './components/Songyao'
 // import imgList from "./components/imgList.vue"
 import next from "./components/nextTick.vue"
+// import xhr from "./utils/xhr"
+import axios from "./utils/axios"
+import abortableFetch from "./utils/fetch"
 export default {
   name: 'app',
   components: {
@@ -35,29 +39,44 @@ export default {
     }
   },
   updated() {
-    console.log('updated')
+    console.log('updated', axios)
   },
   mounted() {
-    // this.t1 = 100
-    // this.hobby = 'front end'
-    // setTimeout(() => {
-    //   this.name = '前端南玖'
-    // })
-    // Promise.resolve().then(()=>{
-    //   this.name = '哈哈哈'
-    // })
-    
-    // const title = this.$refs.title
+    // console.log('mounted', axios)
+    this.fetchData()
+      // this.getData()
+      // this.getData()
+  },
+  methods: {
+    // async getData() {
+    //   const res = await xhr({
+    //     url: '/api/columns/zhihuadmin',
+    //     method: 'get'
+    //   })
+    //   console.log(res)
+    // },
+    async getDataByAxios() {
+      const res = await axios.get('/api/columns/zhihuadmin')
+      res
+      console.log('axios')
+    },
+    async fetchData() {
 
-    // title.ontouchstart = function() {
-    //   this.t1 = +new Date()
-    //   console.log('touchstart')
-    // }
-    // title.onclick = function () {
-    //   this.t2 = +new Date()
-    //   console.log('click')
-    //   console.log(this.t2-this.t1)
-    // }
+      const {request, cancelRes} =  abortableFetch('/api/columns/zhihuadmin')
+
+      // console.log(ready,'ss')
+      request
+        .then(res => console.log(res))
+        .catch(err => {
+          if (err.name === 'AbortError') {
+            console.log('请求已被终止');
+          }
+        });
+
+      // 手动取消请求
+      cancelRes();
+      
+    }
   }
 }
 </script>
@@ -66,8 +85,12 @@ export default {
 #app{
   text-align: center;
 }
-.title{
+.title, .btn{
   font-size: (24/@rem);
+}
+.btn{
+  background: skyblue;
+  color: #fff;
 }
 .my_img{
   width: (200/@rem);

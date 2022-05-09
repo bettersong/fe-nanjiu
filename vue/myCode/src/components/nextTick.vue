@@ -21,11 +21,11 @@ export default {
         }
     },
     mounted() {
-        this.name = 'front end'
+        // this.name = 'front end'
         this.verse = '世间万物都是空，功名利禄似如风'
-        Promise.resolve().then(() => {
-            this.name = 'study ...'
-        })
+        // Promise.resolve().then(() => {
+        //     this.name = 'study ...'
+        // })
         setTimeout(() => {
             this.verse = '半身风雨半身寒，一杯浊酒敬流年'
         })
@@ -42,7 +42,7 @@ export default {
     },
     updated() {
         this.count++
-        console.log('update:',this.count)
+        // console.log('update:',this.count)
     }
 
 }
