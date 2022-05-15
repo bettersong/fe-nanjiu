@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <next/> 
-    <div class="btn" @click="getDataByAxios">发起请求</div>
+    <!-- <next/>  -->
+    <openApp />
+    <!-- <div class="btn" @click="getDataByAxios">发起请求</div> -->
+    <!-- <div class="open_app"></div> -->
     <!-- <img class="my_img" alt="Vue logo" src="./assets/my.jpg"> -->
     <!-- <Songyao /> -->
     <!-- <div class="title" ref="title">实现v-lazy </div>
@@ -15,7 +17,8 @@
 <script>
 // import Songyao from './components/Songyao'
 // import imgList from "./components/imgList.vue"
-import next from "./components/nextTick.vue"
+// import next from "./components/nextTick.vue"
+import openApp from "./components/openApp.vue"
 // import xhr from "./utils/xhr"
 import axios from "./utils/axios"
 import abortableFetch from "./utils/fetch"
@@ -24,7 +27,8 @@ export default {
   components: {
     // Songyao
     // imgList
-    next
+    // next,
+    openApp
   },
   data() {
     return {
