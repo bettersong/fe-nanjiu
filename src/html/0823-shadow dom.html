@@ -5,11 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .wx_name {
+            color:aqua;
+        }
+        :host-context(body) {
+            color: coral;
+        }
+        #root {
+            --bg: coral;
+            --color: #fff;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            -webkit-appearance: none;
+            background-color: chocolate;
+        }
+    </style>
 </head>
 <body>
-    <input type="text">
+    <!-- <input type="range" />
+    <input class="name" type="text">
     <input type="range">
     <video src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" controls></video>
     <textarea></textarea>
+    <div class="wx_name">我是真实dom</div> -->
+    <div id="root"></div>
+
+    <!-- <script>
+        const shadowroot = root.attachShadow({mode: 'open'})
+        const template = `
+            <div class="wx_name">shadow dom - aaa</div>
+            <div class="wx_name">shadow dom - bbb</div>
+            <div class="wx_name">shadow dom - ccc</div>
+        `
+        shadowroot.innerHTML = template
+        document.addEventListener('click', e => {
+            console.log(e.target)
+        })
+    </script> -->
+
+    <script>
+        // const name = document.querySelector('.name')
+        // console.log(name.firstChild)
+
+        const shadowroot = root.attachShadow({mode: 'open'})
+        const template = `
+            <div class="wx_name">shadow dom - 前端南玖</div>
+            <style>
+                :host {
+                    border: 1px solid #ccc;
+                    color: pink;
+                }
+                // .wx_name {
+                //     background: var(--bg, red);
+                //     color: var(--color, #000);
+                // }
+            </style>
+        `
+        shadowroot.innerHTML = template
+        // console.log(shadowroot)
+        const input = document.querySelector('input')
+        // const inputRoot = input.attachShadow({mode: 'open'})
+    </script>
 </body>
 </html>

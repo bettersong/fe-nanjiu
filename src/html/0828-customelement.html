@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <wx-text>前端南玖</wx-text>
+    <script>
+        class wxText extends HTMLElement {
+            constructor() {
+                super()
+                // console.log(this.innerText)
+                const text = this.innerText
+                this.innerText = null
+                const shadowRoot = this.attachShadow({mode: 'open'})
+                shadowRoot.innerHTML = `
+                    <span>${text}</span>
+                `
+            }
+        }
+
+        customElements.define('wx-text', wxText)
+    </script>
+</body>
+</html>
