@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Foo(properties, elements) {
+        //添加可索引属性
+        for (let i = 0; i < elements; i++) {
+            this[i] = `element${i}`
+        }
+
+        //添加常规属性
+        for (let i = 0; i < properties; i++) {
+            const prop = `property${i}`
+            this[prop] = prop
+        }
+        }
+        const foo = new Foo(12, 12)
+        console.log(foo)
+    </script>
+</body>
+</html>
