@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 100px;
+            background: red;
+        }
+        .box2 {
+            width: 100px;
+            height: 200px;
+            background: greenyellow;
+        }
+
+        .outer {
+            position: relative;
+            width: 100px;
+            height: 200px;
+            background: salmon;
+            /* z-index: 1; */
+        }
+        .inner {
+            position: relative;
+            width: 50px;
+            height: 200px;
+            background: cadetblue;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div style="position:relative; z-index:0;">
+        <div style="position:absolute; z-index:2;" class="box1">box1--z-index=2</div>
+    </div>
+    
+    <div style="position:relative; z-index:0;">
+       <div style="position:relative; z-index:1;" class="box2">box2--z-index=1</div>
+    </div> -->
+
+    <div class="outer">
+        父元素
+        <div class="inner">子元素</div>
+    </div>
+</body>
+</html>
