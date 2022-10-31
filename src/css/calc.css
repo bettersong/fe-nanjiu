@@ -1,0 +1,6 @@
+.container {
+  width: 100%;
+}
+.container .box {
+  width: calc(100% - 10px);
+}
