@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background:#000;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            width:100%;
+            height:100vh;
+        }
+        canvas{
+            position:relative;
+            /* filter: blur(1px); */
+        }
+    </style>
+</head>
+<body>
+<canvas id="fireworks"></canvas>
+
+<script>
+var canvas = document.querySelector("#fireworks")
+canvas.width = window.innerWidth
+canvas.height = window.innerHeight
+var ctx = canvas.getContext("2d")
+
+
+// 绘制倒计时
+let particles = [],
+amount = 0,
+ww = canvas.width,
+wh = canvas.height,
+id,
+numList = ['零', '壹', '贰', '叁', '肆', '伍']
+
+class TextParticle {
+constructor(x, y) {
+    this.x = Math.random() * ww;
+    this.y = Math.random() * wh;
+    this.dest = {
+        x: x,
+        y: y
+    }
+    this.r = Math.random() * 2 * Math.PI;
+    this.vx = (Math.random() - 0.5) * 25
+    this.vy = (Math.random() - 0.5) * 25
+    this._x = 0;
+    this._y = 0;
+    this.friction = Math.random() * 0.025 + 0.95;
+    this.color = colorRandom()
+}
+
+draw() {
+    this._x = (this.dest.x - this.x) / 1000;
+    this._y = (this.dest.y - this.y) / 1000;
+    this.vx += this._x
+    this.vy += this._y
+    this.vx *= this.friction
+    this.vy *= this.friction
+    this.x += this.vx
+    this.y += this.vy
+
+    ctx.fillStyle = this.color;
+    ctx.beginPath()
+    ctx.arc(this.x, this.y, this.r, Math.PI * 2, false)
+        //给粒子增加阴影
+    ctx.shadowOffsetX = 1
+    ctx.shadowOffsetY = 1
+    ctx.shadowBlur = 1
+    ctx.shadowColor = colorRandom()
+    ctx.fill()
+}
+
+}
+
+
+function initScene(i) {
+    ww = canvas.width = window.innerWidth,
+    wh = canvas.height = window.innerHeight
+    ctx.font = '20vw Arial'
+    ctx.textAlign = 'center'
+    ctx.fillText(numList[i], ww / 2, wh / 1.6);
+    let data = ctx.getImageData(0, 0, ww, wh).data
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    // ctx.globalCompositeOperation = 'screen';
+    particles = [] //每次执行初始化函数清空粒子
+    for (let i = 0; i < ww; i += Math.round(ww / 200)) {
+        for (let j = 0; j < wh; j += Math.round(ww / 200)) {
+            if (data[((i + j * ww) * 4) + 3] > 200) {
+                particles.push(new TextParticle(i, j))
+            }
+        }
+    }
+    amount = particles.length
+}
+
+function go() {
+    id = requestAnimationFrame(go)
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    for (let i = 0; i < amount; i++) {
+        particles[i].draw()
+    }
+}
+
+function colorRandom() {
+    return `hsl(${(Math.random() * 360)}, 100%, 50%)`
+}
+
+var fireworksArray = []  // 烟花上升
+var particlesArray = []  // 烟花粒子
+
+// 粒子对象，也就是最后烟花爆炸💥出的粒子
+class Particle {
+    constructor(x, y, color) {
+        // 坐标
+        this.x = x 
+        this.y = y
+        this.c = color // 颜色
+        // 随机生成一个速度值
+        this.vx = (0.5 - Math.random()) * 100
+        this.vy = (0.5 - Math.random()) * 100
+        this.age = Math.random() * 100
+    }
+    update() {
+        // 更新坐标
+        this.x += this.vx / 20
+        this.y += this.vy / 20
+        this.vy++
+        this.age--
+    }
+    draw() {
+        ctx.globalAlpha = 1
+        ctx.beginPath()
+        ctx.fillStyle = this.c
+        ctx.arc(this.x, this.y, 1, 0, Math.PI * 2)
+        ctx.fill()
+    }
+}
+// 烟花对象，这个指的是上升过程的粒子，类似之前绘制的流星🌠
+class Firework {
+    constructor() {
+        this.y = canvas.height
+        this.x = Math.random() * canvas.width
+        this.vel = -7
+        this.c = `hsl(${(Math.random() * 360)}, 100%, 50%)`
+    }
+    update() {
+        this.y += this.vel
+        this.vel += 0.04
+        if (this.vel >= 0) {
+
+            for (var i = 0; i < 100; i++) {
+                particlesArray.push(new Particle(this.x, this.y, this.c))
+            }
+            this.y = canvas.height
+            this.x = Math.random() * canvas.width
+            this.vel = -7
+            this.c = `hsl(${(Math.random() * 360)}, 100%, 50%)`
+        }
+    }
+    draw() {
+        ctx.globalAlpha = 1
+        ctx.beginPath()
+        ctx.fillStyle = this.c
+        ctx.arc(this.x, this.y, 3, 0, Math.PI * 2)
+        ctx.fill()
+    }
+}
+
+// 初始化烟花
+function initFireworks() {
+    for (var i = 0; i < (canvas.width / 200); i++) {
+        fireworksArray.push(new Firework)
+    }
+    // ctx.fillStyle = '#fff'
+    // ctx.fillText('新年快乐～', 300, 400)
+
+}
+function draw() {
+    ctx.globalAlpha = 0.1
+    ctx.fillStyle = "black"
+    ctx.fillRect(0, 0, ww, wh) // 绘制黑夜背景
+    // 绘制烟花上升
+    for (var i = 0; i < fireworksArray.length; i++) {
+        fireworksArray[i].update()
+        fireworksArray[i].draw()
+    }
+    // 绘制烟花粒子
+    for (var i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update()
+        particlesArray[i].draw()
+        if (particlesArray[i].age < 0) {
+            particlesArray.splice(i, 1)
+        }
+    }
+    requestAnimationFrame(draw)
+}
+function fireAction() {
+    initFireworks()
+    draw()
+}
+// fireAction()
+
+
+requestAnimationFrame(go)
+let time = 5
+initScene(time)
+let timer = setInterval(() => {
+    time--
+    if(time < 0) {
+        clearInterval(timer)
+        cancelAnimationFrame(id)
+        ctx.clearRect(0, 0, ww, wh)
+        canvas.width = window.innerWidth,
+        canvas.height = window.innerHeight
+        fireAction()
+        return
+    }
+    initScene(time)
+}, 5000)
+
+
+
+    </script>
+</body>
+</html>
