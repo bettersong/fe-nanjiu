@@ -1,0 +1,55 @@
+{
+    "type": "VariableDeclaration",
+    "declarations": [
+      {
+        "type": "VariableDeclarator",
+        "id": {
+          "type": "Identifier",
+          "name": "fn"
+        },
+        "init": {
+          "type": "ArrowFunctionExpression",
+          "id": null,
+          "generator": false,
+          "async": false,
+          "params": [],
+          "body": {
+            "type": "BlockStatement",
+            "body": [
+              {
+                "type": "ExpressionStatement",
+                "expression": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "MemberExpression",
+                    "object": {
+                      "type": "Identifier",
+                        "identifierName": "console"
+                      },
+                      "name": "console"
+                    },
+                    "computed": false,
+                    "property": {
+                      "type": "Identifier",
+                      "name": "log"
+                    }
+                  },
+                  "arguments": [
+                    {
+                      "type": "StringLiteral",
+                      "extra": {
+                        "rawValue": "前端南玖",
+                        "raw": "'前端南玖'"
+                      },
+                      "value": "前端南玖"
+                    }
+                  ]
+                }
+            ],
+            "directives": []
+          }
+        }
+      }
+    ],
+    "kind": "let"
+  }
