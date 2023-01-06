@@ -1,19 +1,41 @@
 // import babel from "@babel/core"
 const babel  = require("@babel/core")
 // console.log(babel)
-let code = `
+let originCode = `
     let fn = () => {
-        console.log('fn')
+        const a = 1
+        console.log('前端南玖')
+        if(a) {
+            console.log(a)
+        }else {
+            return false
+        }
     }
 `
 
-// const ast = babel.parse(code)
-// console.log('AST', ast)
-const options = {
-    presets: ["@babel/preset-env"],
-    ast: true
+
+let removeConsolePlugin = function() {
+    return {
+        
+        // 访问器
+        visitor: {
+            CallExpression(path, state) {
+                const { node } = path
+
+                if(node?.callee?.object?.name === 'console') {
+                    console.log('找到了console语句')
+                    path.parentPath.remove()
+                }
+            }
+        }
+    }
 }
-let res = babel.transformSync(code, options)
+
+const options = {
+    plugins: [removeConsolePlugin()]
+}
+let res = babel.transformSync(originCode, options)
+
 console.dir(res.code)
 
 
