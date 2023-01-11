@@ -11,6 +11,9 @@ module.exports = function() {
                 if(node.key.name === 'created') {
                     node.key.name = 'onLoad'
                 }
+                if(node.key.name === 'mounted') {
+                    node.key.name = 'onReady'
+                }
             }
         }
     }

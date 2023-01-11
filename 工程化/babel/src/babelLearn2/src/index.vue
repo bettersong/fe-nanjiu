@@ -1,5 +1,5 @@
-<template lang="">
-    <div>
+<template>
+    <div class="name">
         {{name}}
     </div>
 </template>
@@ -25,6 +25,19 @@ export default {
 }
 </script>
 
-<style lang="">
-    
+<style lang="less">
+    .name {
+        color:salmon;
+        font-size: 18px;
+    }
+</style>
+
+<style lang="less">
+    .sub_name {
+        color: aqua;
+        border: 1px solid violet;
+        .text {
+            font-weight: 500;
+        }
+    }
 </style>

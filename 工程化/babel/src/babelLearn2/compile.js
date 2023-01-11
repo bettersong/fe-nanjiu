@@ -2,6 +2,8 @@ const fs = require('fs')
 const vueCompiler = require("vue-template-compiler")
 // const babel = require('@babel/core')
 const transformScript = require("./lib/transformScript")
+const transformStyle = require("./lib/transformStyle")
+const transformTemplate = require("./lib/transformTemplate")
 // return
 // 读取代码，并将vue文件拆分成3部分template、script、style
 let getCode = (path) => {
@@ -20,14 +22,21 @@ let getCode = (path) => {
 
 const transform = async (path) => {
     const code = await getCode(path)
+    // console.log(code)
     // 根据拆分后的模块进行分别处理
-    // console.log(code, '--ss')
     if(code) {
         // 处理 template -->  wxml
-
+        transformTemplate(code.template?.content)
         // 处理 script --> js
         transformScript(code.script?.content)
         // 处理 style --> wxss
+        /**
+         * style 标签可能有多个，先合并
+         */
+        const mergeStyle = code.styles?.reduce((acc, curent) => {
+            return acc.content + curent.content
+        })
+        transformStyle(mergeStyle)
     }
 }
 
