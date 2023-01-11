@@ -16,6 +16,12 @@ export default {
             console.log('fn')
         }
     },
+    created() {
+        console.log('created', this.name)
+    },
+    mounted() {
+        console.log('mounted', this.name)
+    }
 }
 </script>
 

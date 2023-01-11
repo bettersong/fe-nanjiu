@@ -1,5 +1,5 @@
 {
-  "name": "babelLearn2",
+  "name": "babellearn2",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/core": "^7.20.12"
+    "@babel/core": "^7.20.12",
+    "@babel/types": "^7.20.7",
+    "vue-template-compiler": "^2.7.14"
   }
 }
