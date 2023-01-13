@@ -4,7 +4,7 @@ const vueCompiler = require("vue-template-compiler")
 const transformScript = require("./lib/transformScript")
 const transformStyle = require("./lib/transformStyle")
 const transformTemplate = require("./lib/transformTemplate")
-// return
+
 // 读取代码，并将vue文件拆分成3部分template、script、style
 let getCode = (path) => {
     return new Promise((resolve, reject) => {
@@ -44,4 +44,3 @@ module.exports = {
     getCode,
     transform
 }
-// transform("./src/index.vue")

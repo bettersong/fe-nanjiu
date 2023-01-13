@@ -14,12 +14,11 @@ const options = {
 }
 
 module.exports = async (code) => {
-    // console.log(code, 'ast')
     babel.transformAsync(code, options)
     .then(res => {
         fs.writeFile(path.join('./wx', 'wx_index.js'), res.code, (err) => {
             if(err) throw err
-            console.log('success')
+            console.log('js: success')
         })
     })
 }

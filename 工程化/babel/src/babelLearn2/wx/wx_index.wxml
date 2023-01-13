@@ -1,0 +1,15 @@
+<view class="name">
+    {{name}}
+    <text bindtap="fn">哈哈哈</text>
+    <image src="" alt="" bindtap="fn" />
+    <template wx:if="{{!name}}">
+        <view>
+           啦啦啦 
+        </view>
+    </template>
+    <template wx:else>
+        <view>
+            哇哇哇
+        </view>
+    </template>
+</view>;

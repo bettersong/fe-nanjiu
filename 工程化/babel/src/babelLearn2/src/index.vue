@@ -1,6 +1,18 @@
 <template>
     <div class="name">
         {{name}}
+        <span v-on:click="fn">哈哈哈</span>
+        <img src="" alt="" v-on:click="fn" />
+        <template v-if="!name">
+            <div>
+               啦啦啦 
+            </div>
+        </template>
+        <template v-else>
+            <div>
+                哇哇哇
+            </div>
+        </template>
     </div>
 </template>
 
@@ -28,14 +40,14 @@ export default {
 <style lang="less">
     .name {
         color:salmon;
-        font-size: 18px;
+        font-size: 24rem;
     }
 </style>
 
 <style lang="less">
     .sub_name {
         color: aqua;
-        border: 1px solid violet;
+        border: 1rem solid violet;
         .text {
             font-weight: 500;
         }

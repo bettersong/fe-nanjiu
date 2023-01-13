@@ -1,10 +1,10 @@
 .name {
   color: salmon;
-  font-size: 18px;
+  font-size: 24rpx;
 }
 .sub_name {
   color: aqua;
-  border: 1px solid violet;
+  border: 1rpx solid violet;
 }
 .sub_name .text {
   font-weight: 500;

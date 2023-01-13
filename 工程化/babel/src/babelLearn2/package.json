@@ -11,10 +11,13 @@
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.20.12",
+    "@babel/plugin-syntax-jsx": "^7.18.6",
     "@babel/types": "^7.20.7",
     "less": "^4.1.3",
     "postcss": "^8.4.21",
     "postcss-less-engine": "^0.6.2",
+    "postcss-rem2rpx": "^1.0.1",
+    "posthtml": "^0.16.6",
     "vue-template-compiler": "^2.7.14"
   }
 }

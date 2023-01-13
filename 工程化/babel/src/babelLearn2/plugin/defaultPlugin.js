@@ -19,7 +19,6 @@ module.exports = () => {
                 const newNode = t.callExpression(t.identifier('Page'), [node.declaration])
                 path.replaceWith(newNode)
             }
-
             // 处理methods
         }
     }
