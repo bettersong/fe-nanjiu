@@ -11,6 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.20.12",
-    "@babel/preset-env": "^7.20.2"
+    "@babel/generator": "^7.20.7",
+    "@babel/parser": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/traverse": "^7.20.12"
   }
 }

@@ -11,7 +11,6 @@ const options = {
 
 module.exports = async function(code) {
     const res = await babel.transformAsync(code, options)
-    // console.log('----', res)
     if(res.code) {
         
         fs.writeFile(path.join("./wx", "wx_index.wxml"), res.code, (err) => {
