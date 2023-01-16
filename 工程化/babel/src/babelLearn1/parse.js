@@ -32,7 +32,3 @@ console.log(code)
 // const res2 = parser.parseExpression(code)
 // console.log(res2)
 
-
-// (function() {
-//     console.log('happy new year to 2023')
-// })()
