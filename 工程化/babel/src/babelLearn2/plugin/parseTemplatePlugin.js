@@ -13,12 +13,12 @@ module.exports = function() {
                     node.closingElement.name.name = 'view'
                 }
                 // 将span标签替换成text标签
-                if(node.openingElement.name.name === 'span') {
+                if(node.openingElement.name?.name === 'span') {
                     node.openingElement.name.name = 'text'
                     node.closingElement.name.name = 'text'
                 }
                 // 将img标签替换成image标签
-                if(node.openingElement.name.name === 'img') {
+                if(node.openingElement.name?.name === 'img') {
                     node.openingElement.name.name = 'image'
                 }
             },

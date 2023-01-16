@@ -19,6 +19,7 @@ traverse(ast, {
     //     console.log(path)
     // },
     VariableDeclaration(path) {
+        console.log('【path】', path.replaceWith)
         const { node } = path
         console.log(node.kind)
         if(node.kind === 'const') {
@@ -27,8 +28,8 @@ traverse(ast, {
     }
 })
 // console.log(ast)
-const { code } = generate(ast)
-console.log(code)
+const res = generate(ast, {sourceMaps: true})
+console.log(res)
 // const res2 = parser.parseExpression(code)
 // console.log(res2)
 
