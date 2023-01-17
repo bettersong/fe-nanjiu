@@ -15,9 +15,6 @@ const ast = parser.parse(codeStr, {
 // console.log(ast)
 
 traverse(ast, {
-    // enter(path) {
-    //     console.log(path)
-    // },
     VariableDeclaration(path) {
         console.log('【path】', path.replaceWith)
         const { node } = path
