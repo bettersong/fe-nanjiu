@@ -33,8 +33,8 @@ const transform = async (path) => {
         /**
          * style 标签可能有多个，先合并
          */
-        const mergeStyle = code.styles?.reduce((acc, curent) => {
-            return acc.content + curent.content
+        const mergeStyle = code.styles?.reduce((acc, current) => {
+            return acc.content + current.content
         })
         transformStyle(mergeStyle)
     }
