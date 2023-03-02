@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .match {
+            background: salmon;
+        }
+        .resize {
+            background: green;
+        }
+        @font-face {
+            font-family: smallYuan;
+            src: local('PingFang SC'),
+            local("Microsoft Yahei");
+            size-adjust: 50%;
+            unicode-range: U+5143;
+        }
+        .price {
+            font-family: smallYuan;
+            font-size: 24px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <span class="price">100元</span>
+    <!-- <div id="show"></div>
+    <div id="matchShow"></div>
+    <div id="resizeShow"></div> -->
+    <script>
+        // let mqList = window.matchMedia('(min-width: 600px)');
+        // function widthChangeCallback(mqList) {
+        //     console.log(mqList, '-')
+        //     if(mqList.matches) {
+        //         show.innerHTML = `<p class="large">我比599px大</p>`;
+        //     } else {
+        //         show.innerHTML = `<p class="small">我比599px小</p>`;
+        //     }
+        // }
+        // // widthChangeCallback(mqList)
+        // // mqList.addEventListener('change', widthChangeCallback);
+
+        // function widthChangeCallback() {
+        //     if(window.innerWidth > 599) {
+        //         show.innerHTML = `<p class="large">我比599px大</p>`;
+        //     } else {
+        //         show.innerHTML = `<p class="small">我比599px小</p>`;
+        //     }
+        // }
+        // // window.addEventListener('resize', widthChangeCallback);
+        // // widthChangeCallback();
+
+        // let matchCount = 0, resizeCount = 0
+
+        // function matchCallback() {
+        //     matchCount += 1
+        //     matchShow.innerHTML = `<p class="match">matchMedia执行了${matchCount}次</p>`
+        // }
+        // function resizeCallback() {
+        //     resizeCount += 1
+        //     resizeShow.innerHTML = `<p class="resize">resize执行了${resizeCount}次</p>`
+        // }
+        // mqList.addEventListener('change', matchCallback);
+        // matchCallback(mqList)
+        // window.addEventListener('resize', resizeCallback);
+        // resizeCallback()
+
+    </script>
+</body>
+</html>

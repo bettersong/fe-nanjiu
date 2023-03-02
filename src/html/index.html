@@ -9,6 +9,13 @@
         span[class^="color"] {
             color: red
         }
+        @supports selector(:has(a)) {
+        .content:has(.hr ~ .hr) {
+            line-height: 1.75;
+            color: salmon
+            }
+        }
+        
     </style>
 </head>
 <body>
@@ -16,5 +23,9 @@
     <span class="color-red">颜色2</span>
     <span class="color-blue">颜色3</span>
     <span class="color-green">颜色4</span>
+    <div class="content">可是可是可是克莱斯勒劳斯莱斯历史了；的；
+        <div class="hr"></div>
+        <div class="hr"></div>
+    </div>
 </body>
 </html>
