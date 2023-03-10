@@ -1,7 +1,7 @@
 <template>
   <div class="next_tick">
       <div ref="title" class="title">{{name}}</div>
-      <div class="verse">{{verse}}</div>
+      <div :class="$style.verse">{{ verse }}</div>
   </div>
 </template>
 
@@ -47,7 +47,10 @@ export default {
 
 }
 </script>
-<style lang="less">
+<style lang="less" module>
+.title {
+    color: violet;
+}
 .verse{
     font-size: (20/@rem);
 }
