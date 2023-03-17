@@ -44,7 +44,7 @@ export default {
     }
 </style>
 
-<style lang="less">
+<style lang="less" module>
     .sub_name {
         color: aqua;
         border: 1rem solid violet;

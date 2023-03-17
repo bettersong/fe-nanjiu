@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "postcss": "^8.4.21",
-    "postcss-selector-parser": "^6.0.11"
+    "postcss-modules-scope": "^3.0.0",
+    "postcss-selector-parser": "^6.0.11",
+    "vue-template-compiler": "^2.7.14"
   }
 }

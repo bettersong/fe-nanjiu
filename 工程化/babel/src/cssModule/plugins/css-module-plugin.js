@@ -1,7 +1,7 @@
 
 const selectorParser = require("postcss-selector-parser");
 
-//
+// 生成一个选择器名称
 const generateScopedName = (name) => {
     const randomStr = Math.random().toString(16).slice(2);
     return `_${randomStr}__${name}`;
@@ -14,6 +14,8 @@ const plugin = (options = {}) => {
             const exports = {};
 
             function exportScopedName(name) {
+                // css名称与其对应的作用域名城的映射
+
                 const scopedName = generateScopedName(name);
 
                 exports[name] = exports[name] || [];
@@ -49,16 +51,25 @@ const plugin = (options = {}) => {
             }
             // 遍历节点
             function traverseNode(node) {
+                console.log('【node】', node)
+                if(options.module) {
+                    const selector = localizeNode(node.first, node.spaces);
+
+                    node.replaceWith(selector);
+                    return node
+                }
                 switch (node.type) {
                     case "root":
                     case "selector": {
                         node.each(traverseNode);
                         break;
                     }
+                    // 选择器
                     case "id":
                     case "class":
                         exports[node.value] = [node.value];
                         break;
+                    // 伪元素
                     case "pseudo":
                         if (node.value === ":local") {
                             const selector = localizeNode(node.first, node.spaces);
@@ -74,7 +85,6 @@ const plugin = (options = {}) => {
             // 处理 :local 选择器
             root.walkRules((rule) => {
                 const parsedSelector = selectorParser().astSync(rule);
-
                 rule.selector = traverseNode(parsedSelector.clone()).toString();
 
                 rule.walkDecls(/composes|compose-with/i, (decl) => {

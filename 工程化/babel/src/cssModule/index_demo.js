@@ -1,7 +1,6 @@
 const postcss = require('postcss')
 const fs = require('fs')
-
-const cssModulePlugin = require('./plugins/css-module-plugin')
+const postcssModulesScope = require('postcss-modules-scope')  // 作用域隔离核心插件
 
 
 let getCode = (path) => {
@@ -18,16 +17,9 @@ let getCode = (path) => {
 
 (async () => {
     const css = await getCode('./css/index.css')
-    const pipeline = postcss([cssModulePlugin()])
+    const pipeline = postcss([postcssModulesScope()])
 
     const res = pipeline.process(css)
 
     console.log('【output】', res.css)
 })()
-
-
-
-
-
-
-

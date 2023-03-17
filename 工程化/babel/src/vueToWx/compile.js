@@ -25,6 +25,7 @@ const transform = async (path) => {
     // console.log(code)
     // 根据拆分后的模块进行分别处理
     if(code) {
+        console.log('【code】', code)
         // 处理 template -->  wxml
         transformTemplate(code.template?.content)
         // 处理 script --> js
