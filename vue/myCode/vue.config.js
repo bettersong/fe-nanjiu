@@ -1,3 +1,4 @@
+
 module.exports = {
     css: {
         loaderOptions:{
@@ -5,13 +6,15 @@ module.exports = {
                 additionalData: ` @import '~@/static/rem.less';`
             }
         }
+        
     },
-    devServer: {
-        proxy: {
-            '': {
-                target: 'https://zhuanlan.zhihu.com',
-                changeOrigin: true
-            }
-        }
-    }
+    
+    // devServer: {
+    //     proxy: {
+    //         '': {
+    //             target: 'https://zhuanlan.zhihu.com',
+    //             changeOrigin: true
+    //         }
+    //     }
+    // }
 }

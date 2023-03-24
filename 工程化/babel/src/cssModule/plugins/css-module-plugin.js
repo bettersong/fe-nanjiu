@@ -1,8 +1,8 @@
 
 const selectorParser = require("postcss-selector-parser");
 
-// 生成一个选择器名称
-const generateScopedName = (name) => {
+// 随机生成一个选择器名称
+const createScopedName = (name) => {
     const randomStr = Math.random().toString(16).slice(2);
     return `_${randomStr}__${name}`;
 }
@@ -12,11 +12,10 @@ const plugin = (options = {}) => {
         postcssPlugin: 'css-module-plugin',
         Once(root, helpers) {
             const exports = {};
-
+            // 导出 scopedName
             function exportScopedName(name) {
                 // css名称与其对应的作用域名城的映射
-
-                const scopedName = generateScopedName(name);
+                const scopedName = createScopedName(name);
 
                 exports[name] = exports[name] || [];
 
@@ -26,7 +25,7 @@ const plugin = (options = {}) => {
 
                 return scopedName;
             }
-
+            // 本地节点，也就是需要作用域隔离的节点:local()
             function localizeNode(node) {
                 switch (node.type) {
                     case "selector":
@@ -51,7 +50,7 @@ const plugin = (options = {}) => {
             }
             // 遍历节点
             function traverseNode(node) {
-                console.log('【node】', node)
+                // console.log('【node】', node)
                 if(options.module) {
                     const selector = localizeNode(node.first, node.spaces);
 
@@ -77,25 +76,27 @@ const plugin = (options = {}) => {
                             node.replaceWith(selector);
 
                             return;
+                        }else if(node.value === ":global") {
+
                         }
                 }
                 return node;
             }
 
-            // 处理 :local 选择器
+            // 遍历所有rule类型节点
             root.walkRules((rule) => {
                 const parsedSelector = selectorParser().astSync(rule);
                 rule.selector = traverseNode(parsedSelector.clone()).toString();
-
+                // 遍历所有decl类型节点 处理 composes
                 rule.walkDecls(/composes|compose-with/i, (decl) => {
                     const localNames = parsedSelector.nodes.map((node) => {
                         return node.nodes[0].first.first.value;
                     })
                     const classes = decl.value.split(/\s+/);
-
+                    
                     classes.forEach((className) => {
                         const global = /^global\(([^)]+)\)$/.exec(className);
-
+                        // console.log(exports, className, '-----')
                         if (global) {
                             localNames.forEach((exportedName) => {
                                 exports[exportedName].push(global[1]);
@@ -107,9 +108,7 @@ const plugin = (options = {}) => {
                                 });
                             });
                         } else {
-                            throw decl.error(
-                                `referenced class name "${className}" in ${decl.prop} not found`
-                            );
+                            console.log('error')
                         }
                     });
 
@@ -126,7 +125,6 @@ const plugin = (options = {}) => {
                     atRule.params = exportScopedName(localMatch[1]);
                 }
             });
-
             // 生成 :export rule
             const exportedNames = Object.keys(exports);
 
@@ -140,7 +138,6 @@ const plugin = (options = {}) => {
                         raws: { before: "\n  " },
                     })
                 );
-
                 root.append(exportRule);
             }
         },

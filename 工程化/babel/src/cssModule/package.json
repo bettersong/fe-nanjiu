@@ -7,10 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "songyao",
   "license": "ISC",
   "dependencies": {
+    "css-loader": "^6.7.3",
     "postcss": "^8.4.21",
+    "postcss-modules-extract-imports": "^3.0.0",
+    "postcss-modules-local-by-default": "^4.0.0",
     "postcss-modules-scope": "^3.0.0",
     "postcss-selector-parser": "^6.0.11",
     "vue-template-compiler": "^2.7.14"

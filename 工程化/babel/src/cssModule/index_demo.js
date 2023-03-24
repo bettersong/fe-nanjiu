@@ -1,7 +1,8 @@
 const postcss = require('postcss')
 const fs = require('fs')
 const postcssModulesScope = require('postcss-modules-scope')  // 作用域隔离核心插件
-
+const postcssModulesLocalByDefault = require('postcss-modules-local-by-default')  // 默认local插件
+const postcssModulesExtractImports = require('postcss-modules-extract-imports')  // 导入导出插件
 
 let getCode = (path) => {
     return new Promise((resolve, reject) => {
@@ -16,8 +17,12 @@ let getCode = (path) => {
 }
 
 (async () => {
-    const css = await getCode('./css/index.css')
-    const pipeline = postcss([postcssModulesScope()])
+    const css = await getCode('./css/default.css')
+    const pipeline = postcss([
+        postcssModulesLocalByDefault(),
+        postcssModulesExtractImports(), 
+        postcssModulesScope()
+    ])
 
     const res = pipeline.process(css)
 

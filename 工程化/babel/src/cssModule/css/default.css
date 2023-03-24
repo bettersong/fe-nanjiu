@@ -1,0 +1,14 @@
+.qd_box {
+    border: 1px solid #ccc;
+    composes: a_btn from 'a.css'
+}
+.qd_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    composes: qd_box;
+}
+.qd_box {
+    background: coral;
+}

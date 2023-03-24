@@ -1,7 +1,9 @@
 const postcss = require('postcss')
 const fs = require('fs')
+const postcssModulesLocalByDefault = require('postcss-modules-local-by-default')  // 默认local插件
+const postcssModulesExtractImports = require('postcss-modules-extract-imports')  // 导入导出插件
 
-const cssModulePlugin = require('./plugins/css-module-plugin')
+// const cssModulePlugin = require('./plugins/css-module-plugin')  // 自定义插件
 
 
 let getCode = (path) => {
@@ -18,7 +20,11 @@ let getCode = (path) => {
 
 (async () => {
     const css = await getCode('./css/index.css')
-    const pipeline = postcss([cssModulePlugin()])
+    const pipeline = postcss([
+        postcssModulesLocalByDefault(),
+        postcssModulesExtractImports(),
+        require('./plugins/css-module-plugin')()
+    ])
 
     const res = pipeline.process(css)
 

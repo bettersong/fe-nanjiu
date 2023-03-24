@@ -1,18 +1,13 @@
-.qd_container {
-    width: 100%;
-    background: coral;
-    font-size: 18px;
-    color: cyan;
-}
 
-:local(.qd_btn) {
+.qd_btn {
     border-radius: 8px;
     color: #fff;
 }
-:local(.qd_btn):nth(1) {
-    color: pink;
+.qd_text {
+    color: salmon;
 }
 
-:global(.qd_text) {
-    color: chocolate;
+.qd_title {
+    font-size: 20px;
+    composes: qd_text;
 }

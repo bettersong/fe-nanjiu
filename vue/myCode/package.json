@@ -13,6 +13,9 @@
     "css-loader": "^6.7.1",
     "less": "^4.1.2",
     "less-loader": "^7.3.0",
+    "postcss": "^8.4.21",
+    "postcss-loader": "^7.1.0",
+    "postcss-selector-parser": "^6.0.11",
     "vue": "^2.6.11",
     "vue-waterfall": "^1.0.6",
     "vue-waterfall2": "^1.10.6"

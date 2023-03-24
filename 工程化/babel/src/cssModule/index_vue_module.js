@@ -32,7 +32,6 @@ const middleHandle = async (path) => {
             cssList.push(pipeline.process(item.content).css)
         })
         
-
         return cssList
     }
 }
