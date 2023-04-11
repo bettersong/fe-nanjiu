@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        span[class^="color"] {
+        /* span[class^="color"] {
             color: red
         }
         @supports selector(:has(a)) {
@@ -22,13 +22,12 @@
             top: 0;
             bottom: 0;
             background: rgba(0,0,0,.6);
-            /* inset: 0; */
-        }
+        } */
 
     </style>
 </head>
 <body>
-    <span class="colors">颜色1</span>
+    <!-- <span class="colors">颜色1</span>
     <span class="color-red">颜色2</span>
     <span class="color-blue">颜色3</span>
     <span class="color-green">颜色4</span>
@@ -36,6 +35,21 @@
         <div class="hr"></div>
         <div class="hr"></div>
     </div>
-    <div class="overlay"></div>
+    <div class="overlay"></div> -->
+    <div id="container">
+        <style>
+            p { color: red; }
+            strong { text-transform: uppercase; }
+            small { display: none; }
+          </style>
+        <p>hello<br />我是 <strong>南玖</strong></p>
+        <small>公众号 <strong>前端南玖</strong></small>
+   </div>
+
+   <script>
+    console.log('【innerText】', container.innerText)
+
+    console.log('【textContent】', container.textContent)
+   </script>
 </body>
 </html>
