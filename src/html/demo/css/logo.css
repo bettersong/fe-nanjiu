@@ -1,0 +1,16 @@
+
+.hot_marquee {
+    width: 100%;
+    height: 100%;
+  }
+.marquee_swiper {
+    height: 100%;
+}
+.swiper-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 32px;
+    color: #CCCCCC;
+}

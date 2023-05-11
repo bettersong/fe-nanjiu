@@ -5,92 +5,95 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
+
     <style>
-        body{
-            margin:0;
-            padding:0;
-        }
-        .title{
-            /* padding:0 30px; */
-        }
-        .more{
-            color:cornflowerblue;
-        }
-        .img{
-            margin-right:10px;
-        }
-        .title_box{
-            display:flex;
-            justify-content: space-between;
-            padding:20px 30px 0;
-        }
-        .header{
-            width:100%;
-            height:80px;
-            background:#f5f5f5;
-        }
-        .write_box {
-            display: flex;
-            padding:20px 30px;
-            justify-content: space-between;
-        }
-        .text_outer{
-            width:49%;
-        }
-        .text_top{
-            display:flex;
-        }
-        h3,h5{
-            margin:0;
+        video {
+            width: 90%;
+            margin: 0 auto;
         }
     </style>
-    </head>
-    <body>
+</head>
+<body>
+    <video src=""></video>
+
+
+    <script>
+        (async() => {
+            const video = document.querySelector('video');
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true })
+            // console.log('--', v.srcObject)
+            video.srcObject = stream
+            // console.log('--v', v.srcObject)
+            console.log('----', stream)
+
+            const [track] = stream.getVideoTracks();
+            let { backgroundBlur } = track.getSettings();
+            console.log(`Background blur is ${backgroundBlur ? "ON" : "OFF"}`);
+
+            // Listen to background blur changes.
+            track.addEventListener("configurationchange", () => {
+            if (backgroundBlur !== track.getSettings().backgroundBlur) {
+                backgroundBlur = track.getSettings().backgroundBlur;
+                console.log(`Background blur is now ${backgroundBlur ? "ON" : "OFF"}`);
+            }
+            });
+        })()
+
+
         
-    <div class="header"></div>
-    <div class="title_box">
-        <h3 class="title">科普文章</h3>
-        <div class="more">查看更多</div>
-    </div>
-    
-    <div class="write_box">
-    <div class="text_outer">
-        <div class="text_top">
-            <img class="img" src="./img/bg.gif" width="100" height="100">
-            <div class="text_top_right">
-                <h5 >一颗让你很会拉屎的水果，后悔没早点知道!</h5>
-                <div>丁香医生说∶我们吃水果，是为了科学膳食，而不是为追求某—
-                特殊功效。西梅的确有着优秀的通便能力，但由于个体反应的差
-                别、各产地各品种西梅中成分组成也有一些区别(山梨糖醇最...
-                </div>
-            </div>
-        </div>
-         <ul>
-            <li>讨论如果你发现自己已是癌症晚期，你会积极治疗，还是放弃?</li>
-            <li>为什么看手机更容易晕车?怎么预防?</li>
-            <li>讲真，国人「红肉」吃的太多了</li>
-        </ul>
-    </div>
-    <div class="text_outer">
-        <div class="text_top">
-            <img class="img" src="./img/bg.gif" width="100" height="100">
-            <div class="text_top_right">
-                <h5 >一颗让你很会拉屎的水果，后悔没早点知道!</h5>
-                <div>丁香医生说∶我们吃水果，是为了科学膳食，而不是为追求某—
-                特殊功效。西梅的确有着优秀的通便能力，但由于个体反应的差
-                别、各产地各品种西梅中成分组成也有一些区别(山梨糖醇最...
-                </div>
-            </div>
-            
-        </div>
-        <ul>
-            <li>讨论如果你发现自己已是癌症晚期，你会积极治疗，还是放弃?</li>
-            <li>为什么看手机更容易晕车?怎么预防?</li>
-            <li>讲真，国人「红肉」吃的太多了</li>
-        </ul>
-    </div>
-</div>
+        // navigator.mediaDevices.getUserMedia({ video: true })
+        // .then((stream) => {
+        // document.querySelector("video").srcObject = stream;
+
+        // const [track] = stream.getVideoTracks();
+        // const capabilities = track.getCapabilities();
+        // const settings = track.getSettings();
+
+        // if (!("backgroundBlur" in settings)) {
+        //     throw Error(`Background blur is not supported by ${track.label}`);
+        // }
+
+        // console.log(`Background blur is ${settings.backgroundBlur ? "ON" : "OFF"}`);
+        
+        // // Listen to background blur changes.
+        // track.addEventListener("configurationchange", configurationChange);
+        
+        // // Check whether the user can toggle background blur in the web app.
+        // if (capabilities.backgroundBlur?.length !== 2) {
+        //     throw Error(`Background blur toggle is not supported by ${track.label}`);
+        // }
+
+        // const button = document.querySelector("button");
+        // button.addEventListener("click", buttonClick);
+        // button.disabled = false;
+        // })
+        // .catch((error) => console.log("Argh!", `${error}`));
+
+        // function buttonClick() {
+        // const stream = document.querySelector("video").srcObject;
+        // const [track] = stream.getVideoTracks();
+        // const settings = track.getSettings();
+        // const constraints = {
+        //     advanced: [{ backgroundBlur: !settings.backgroundBlur }],
+        // };
+        // track.applyConstraints(constraints)
+        // .then(() => {
+        //     const settings = track.getSettings();
+        //     console.log(`Background blur is now ${settings.backgroundBlur ? "ON" : "OFF"}`);
+        // })
+        // .catch((error) => console.log("Argh!", `${error}`));
+        // }
+
+        // function configurationChange(event) {
+        // const settings = event.target.getSettings();
+        // if ("backgroundBlur" in settings) {
+        //     console.log(`Background blur changed to ${settings.backgroundBlur ? "ON" : "OFF"}`);
+        // }
+        // }
+        
+
+    </script>
+
+    <!-- <script src="./js/a.js"></script> -->
 </body>
 </html>
