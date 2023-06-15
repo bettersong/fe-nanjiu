@@ -1,21 +1,98 @@
-
 const Webpack = require('webpack')
-
+const { VueLoaderPlugin }  = require('vue-loader')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const copyWebpackPlugin = require('copy-webpack-plugin')
+const miniCssExtractPlugin = require('mini-css-extract-plugin')
+const cssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const terserPlugin = require('terser-webpack-plugin')
 module.exports = {
-    entry: './index.js',
+    entry: { 
+        main: './src/main.js',
+        // index: './src/index.js'
+    },
     output: {
-        filename: 'bundle.[hash:6].js',
+        filename: '[name].[contenthash:6].js',
         path: __dirname + '/dist',
-        publicPath: '/'
+        clean: true
     },
     resolve: {
         alias: {
-            '@': __dirname + '/src'
+            'module': __dirname + '/module',
+            '@': __dirname + '/src',
+            'utils': __dirname + '/utils',
+            'assets': __dirname + '/assets'
         }
     },
+    module: {
+        rules:[
+            {test: /\.vue$/, use: 'vue-loader'},
+            {
+                test: /\.css$/,
+                use: [miniCssExtractPlugin.loader, 
+                    'css-loader', 
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                plugins: ['autoprefixer']
+                            }
+                            
+                    }
+                }]
+            },
+            {
+                test: /\.js$/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                },
+                exclude: /node_modules/
+            },
+            {
+                test: /\.(png|jpg|gif|jpeg)$/,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'images/[name].[hash:6][ext]'
+                }
+            }
+        ]
+    },
     plugins:[
-        new Webpack.ProgressPlugin()
+        new Webpack.ProgressPlugin(),
+        new VueLoaderPlugin(),
+        new HtmlWebpackPlugin({
+            template: './public/index.html',
+            filename: 'index.html',
+            minify: true
+        }),
+        new copyWebpackPlugin({
+            patterns: [
+                {from: 'module', to: __dirname + '/dist/module/'}
+            ]
+        }),
+        new miniCssExtractPlugin({
+            filename: 'css/[name].[contenthash:6].css'
+        }),
     ],
-    // mode: 'development'
-    watch: true,
+    optimization: {
+        minimize: true,
+        minimizer: [
+            // '...',
+            new cssMinimizerPlugin(),
+            new terserPlugin({
+                extractComments: false,  // 关闭注释剥离功能
+            }),
+            '...'
+        ]
+    },
+    devtool: 'eval-cheap-module-source-map',
+    devServer: {
+        hot: true,
+        open: true,
+        proxy: {
+            '/api': 'http://localhost:3000'
+        }
+    }
 }
