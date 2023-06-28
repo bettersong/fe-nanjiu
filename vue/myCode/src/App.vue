@@ -12,7 +12,8 @@
     <div>{{name}}</div>
     <div>{{hobby}}</div> -->
     <!-- <img-list /> -->
-    <cssModule />
+    <!-- <cssModule /> -->
+    <input type="text" v-model="name" class="text_input" />
   </div>
 </template>
 
@@ -22,7 +23,7 @@
 // import next from "./components/nextTick.vue"
 // import openApp from "./components/openApp.vue"
 // import waterfall2 from "./components/waterfall.vue"
-import cssModule from "./components/cssModule.vue"
+// import cssModule from "./components/cssModule.vue"
 // import xhr from "./utils/xhr"
 import axios from "./utils/axios"
 import abortableFetch from "./utils/fetch"
@@ -34,7 +35,7 @@ export default {
     // next,
     // waterfall2,
     // openApp
-    cssModule
+    // cssModule
   },
   data() {
     return {
@@ -92,6 +93,9 @@ export default {
 </script>
 
 <style lang="less">
+.text_input {
+  color: chocolate;
+}
 #app{
   text-align: center;
 }

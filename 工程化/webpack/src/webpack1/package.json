@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve --mode development",
+    "dev": "webpack serve --config webpack.config.dev.js --mode development",
     "build": "webpack --mode development"
   },
   "keywords": [],
@@ -24,6 +24,9 @@
     "mini-css-extract-plugin": "^2.7.6",
     "postcss": "^8.4.24",
     "postcss-loader": "^7.3.3",
+    "sass": "^1.63.6",
+    "sass-loader": "^13.3.2",
+    "scss-loader": "0.0.1",
     "style-loader": "^3.3.3",
     "ts-loader": "^9.4.3",
     "typescript": "^5.1.3",

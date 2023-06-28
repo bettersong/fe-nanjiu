@@ -1,0 +1,18 @@
+{
+  "name": "webpack2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "css-loader": "^6.8.1",
+    "style-loader": "^3.3.3",
+    "vue": "^2.7.14",
+    "vue-loader": "^14.2.4"
+  }
+}

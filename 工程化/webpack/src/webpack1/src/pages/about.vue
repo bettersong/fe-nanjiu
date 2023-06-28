@@ -12,7 +12,7 @@
 /* 关于页面css */
 .about_page {
     font-size: 20px;
-    color: chocolate;
+    color: #191919;
     padding: 20px 20px;
 }
 </style>

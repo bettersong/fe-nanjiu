@@ -3,7 +3,7 @@ const { VueLoaderPlugin }  = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const copyWebpackPlugin = require('copy-webpack-plugin')
 const miniCssExtractPlugin = require('mini-css-extract-plugin')
-const cssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+// const cssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const terserPlugin = require('terser-webpack-plugin')
 module.exports = {
     entry: './src/main.js',
@@ -66,7 +66,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './public/index.html',
             filename: 'index.html',
-            minify: true
         }),
         new copyWebpackPlugin({
             patterns: [
@@ -76,29 +75,28 @@ module.exports = {
         new miniCssExtractPlugin({
             filename: 'css/[name].[contenthash:6].css'
         }),
-        // new Webpack.HotModuleReplacementPlugin()
     ],
     optimization: {
-        minimize: true,
-        minimizer: [
-            // '...',
-            new cssMinimizerPlugin(),
-            new terserPlugin({
-                extractComments: false,  // 关闭注释剥离功能
-            }),
-            '...'
-        ],
+        // minimize: true,
+        // minimizer: [
+        //     // '...',
+        //     // new cssMinimizerPlugin(),
+        //     new terserPlugin({
+        //         extractComments: false,  // 关闭注释剥离功能
+        //     }),
+        //     '...'
+        // ],
         // runtimeChunk: 'single'
     },
     target: 'web',
     devtool: 'eval-cheap-module-source-map',
-    // devServer: {
-    //     hot: true,
-    //     static: __dirname + '/dist',
-    //     // open: true,
-    //     proxy: {
-    //         '/api': 'http://localhost:3000'
-    //     },
-    //     watchFiles: ['src/**/*','public/**/*']
-    // }
+    devServer: {
+        hot: true,
+        static: __dirname + '/dist',
+        // open: true,
+        proxy: {
+            '/api': 'http://localhost:3000'
+        },
+        watchFiles: ['src/**/*','public/**/*']
+    }
 }
