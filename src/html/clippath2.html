@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body {
+            width: 100vw;
+            height: 100vh;
+            background: #000;
+        } */
+        .container {
+            --duration: 700ms;
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+            max-width: 400px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 10px auto;
+        }
+        .letter {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            /* background: salmon; */
+            /* background-image: url("https://img.soogif.com/xiOE4Hs23bEoQVgN15NOtTUJ7cxFeExY.gif");
+            background-position: 50% 0%;
+            background-size: cover; */
+            transition: clip-path var(--duration) var(--ease);
+        }
+        .letter::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            user-select: none;
+            background-image: url("https://img.soogif.com/xiOE4Hs23bEoQVgN15NOtTUJ7cxFeExY.gif");
+            background-position: 50% 0%;
+            background-size: cover;
+            mix-blend-mode: soft-light;
+        }
+        .u {
+            clip-path: polygon(
+                0 0,
+                0 100%,
+                100% 100%,
+                100% 0,
+                84% 0,
+                61% 0,
+                41% 0,
+                19% 0
+            );
+            }
+
+/* hover */
+.container:hover .u {
+  clip-path: polygon(
+    0 6%,
+    5% 100%,
+    96% 88%,
+    98% 3%,
+    71% 5%,
+    71% 62%,
+    31% 68%,
+    25% 0
+  );
+}
+.container:hover .letter {
+    animation: calc(var(--duration) * 2) calc(var(--i) * (var(--duration) / -3)) steps(3, end) alternate infinite;
+    animation-name: letter;
+}
+
+.container:hover .letter::before {
+    animation: dance calc(var(--duration) * 2) calc(var(--i) * (var(--duration) / -3)) steps(3, end) infinite;
+}
+@keyframes letter {
+    25%  { transform: translate(-5%,  5%) scale(1.05) rotate(-5deg) }
+    50%  { transform: translate( 5%, -2%) rotate( 2deg) }
+    75%  { transform: translate(10%,  0%) scale(1.02) rotate( 8deg) }
+    100% { transform: translate( 0%, -5%) rotate( 4deg) }
+}
+
+
+@keyframes dance {
+    100% { transform: scale(1.25) }
+}
+.target {
+  font-size: 24px;
+}
+.target strong {
+  /* 你的代码写在这里 */
+  text-emphasis: filled double-circle red;
+  font-weight: inherit;
+}
+    </style>
+</head>
+<body>
+    <p class="target">阅文集团前端技术中心<strong>欢迎您</strong>！</p>
+    <!-- <div class="container">
+        <div class="letter u" style="--i: 0"></div>
+    </div> -->
+    <script>
+
+        function doubleItem(arr) {
+            return arr.concat(arr)
+        }
+        function doubleItem2(arr) {
+            return [...arr.concat(arr)]
+        }
+        function doubleItem3(arr) {
+            return [...arr, ...arr]
+        }
+        function doubleItem4(arr) {
+            [...arr].forEach(item => {
+              arr.push(item)  
+            });
+            return arr
+        }
+        function doubleItem5(arr) {
+            return arr.copyWithin(arr.length)
+        }
+        const arr = [1,2,4]
+        console.log(
+            doubleItem(arr),
+            doubleItem2(arr),
+            doubleItem3(arr),
+            doubleItem4(arr),
+            doubleItem5(arr)
+            )
+    </script>
+</body>
+</html>

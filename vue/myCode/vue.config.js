@@ -9,12 +9,13 @@ module.exports = {
         
     },
     
-    // devServer: {
-    //     proxy: {
-    //         '': {
-    //             target: 'https://zhuanlan.zhihu.com',
-    //             changeOrigin: true
-    //         }
-    //     }
-    // }
+    devServer: {
+        disableHostCheck: true,
+        // proxy: {
+        //     '': {
+        //         target: 'https://zhuanlan.zhihu.com',
+        //         changeOrigin: true
+        //     }
+        // }
+    }
 }
