@@ -1,0 +1,225 @@
+<html>
+  <title>Discode编码</title>
+<canvas style="border: 1px solid red" width="400" height="400" id="canvasInput"></canvas>
+<br>
+<input id="inputData" type="text" />
+<button onclick="encodeData()">encode</button>
+<p>Powered By <a href="https://www.7gugu.com/">7gugu</a></p>
+<script>
+  // 获取canvas对象
+  function getCTX() {
+    let c = document.getElementById("canvasInput");
+    let ctx = c.getContext("2d");
+    ctx.clearRect(0, 0, c.width, c.height);
+    return ctx;
+  }
+  // 10度一线 360度 6个6位
+  // 5圈 5*6 = 30字节的数据
+  // 数据从内到外读取
+  function drawPoint(input) {
+    // 获取画笔
+    let ctx = getCTX();
+    ctx.lineCap = "round";
+    ctx.lineWidth = 3;
+    // 从内向外
+    let level = 1
+    let divide = 1
+    let radius = 50
+    for (let j = 0; j < 5; j++, radius += 10) {
+      for (let i = 0; i < 360; i += 10) {
+        let pre = 0
+        let arc = 0
+        if (input[Math.floor(i / 60) + j * 6][i / 10 % 6]) {
+          //ctx.strokeStyle = "#38383d"
+          ctx.strokeStyle = "#000000"
+          pre = (i - 7.5 + 2) * (Math.PI / 180)
+          arc = (i) * (Math.PI / 180)
+        } else {
+          ctx.strokeStyle = "#000000"
+          pre = (i - 2.5 + 0.5) * (Math.PI / 180)
+          arc = (i - 1) * (Math.PI / 180)
+        }
+        // console.log(i, Math.floor(i / 60) + j*6, (i / 10 % 6))
+
+        ctx.beginPath();
+        ctx.arc(200, 200, radius, pre, arc);
+        ctx.stroke();
+
+      }
+    }
+    
+    // 外围装饰性点
+    for (let i = 0; i < 360; i += 10) {
+      let pre = 0
+      let arc = 0
+      if (Math.random() < 0.6) {
+        pre = (i - 13) * (Math.PI / 180)
+        arc = (i + 3) * (Math.PI / 180)
+      }
+
+      ctx.beginPath();
+      ctx.strokeStyle = "#0c0c0d"
+      ctx.arc(200, 200, 103, pre, arc);
+      ctx.stroke();
+
+    }
+
+    // for (let i = 0; i < 360; i += 10) {
+    //   let pre = 0
+    //   let arc = 0
+    //   if (Math.random() < 0.6) {
+    //     pre = (i - 13) * (Math.PI / 180)
+    //     arc = (i + 3) * (Math.PI / 180)
+    //   }
+
+    //   ctx.beginPath();
+    //   ctx.arc(200, 200, 103, pre, arc);
+    //   ctx.stroke();
+
+    // }
+
+    
+
+    // 马眼
+    ctx.strokeStyle = "#000000"
+    ctx.lineWidth = 4;
+    // 左上角
+    ctx.beginPath();
+    ctx.arc(110, 110, 15, 0, 360 * Math.PI / 180);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.fillStyle = "#000000";
+    ctx.arc(110, 110, 5, 0, 360 * Math.PI / 180);
+    ctx.fill();
+    // 右上角
+    ctx.beginPath();
+    ctx.arc(290, 110, 15, 0, 360 * Math.PI / 180);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.fillStyle = "#000000";
+    ctx.arc(290, 110, 5, 0, 360 * Math.PI / 180);
+    ctx.fill();
+    // 左下角
+    ctx.beginPath();
+    ctx.arc(110, 290, 15, 0, 360 * Math.PI / 180);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.fillStyle = "#000000";
+    ctx.arc(110, 290, 5, 0, 360 * Math.PI / 180);
+    ctx.fill();
+    // 右下角
+    ctx.beginPath();
+    ctx.arc(290, 290, 15, 0, 360 * Math.PI / 180);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.fillStyle = "#000000";
+    ctx.arc(290, 290, 5, 0, 360 * Math.PI / 180);
+    ctx.fill();
+    // 中心标识
+    let img = new Image()
+    img.src = "icon.png"
+    img.onload = function () {
+      ctx.beginPath();
+      ctx.drawImage(img, 165, 165, 70, 70)
+    }
+
+
+  }
+  // 编码表转换
+  function str2bin(input) {
+    const dict = {
+      ".": [0, 0, 0, 0, 0, 0],
+      "a": [0, 0, 0, 0, 0, 1],
+      "b": [0, 0, 0, 0, 1, 0],
+      "c": [0, 0, 0, 0, 1, 1],
+      "d": [0, 0, 0, 1, 0, 0],
+      "e": [0, 0, 0, 1, 0, 1],
+      "f": [0, 0, 0, 1, 1, 0],
+      "g": [0, 0, 0, 1, 1, 1],
+      "h": [0, 0, 1, 0, 0, 0],
+      "i": [0, 0, 1, 0, 0, 1],
+      "j": [0, 0, 1, 0, 1, 0],
+      "k": [0, 0, 1, 0, 1, 1],
+      "l": [0, 0, 1, 1, 0, 0],
+      "m": [0, 0, 1, 1, 0, 1],
+      "n": [0, 0, 1, 1, 1, 0],
+      "o": [0, 0, 1, 1, 1, 1],
+      "p": [0, 1, 0, 0, 0, 0],
+      "q": [0, 1, 0, 0, 0, 1],
+      "r": [0, 1, 0, 0, 1, 0],
+      "s": [0, 1, 0, 0, 1, 1],
+      "t": [0, 1, 0, 1, 0, 0],
+      "u": [0, 1, 0, 1, 0, 1],
+      "v": [0, 1, 0, 1, 1, 0],
+      "w": [0, 1, 0, 1, 1, 1],
+      "x": [0, 1, 1, 0, 0, 0],
+      "y": [0, 1, 1, 0, 0, 1],
+      "z": [0, 1, 1, 0, 1, 0],
+      "0": [0, 1, 1, 0, 1, 1],
+      "1": [0, 1, 1, 1, 0, 0],
+      "2": [0, 1, 1, 1, 0, 1],
+      "3": [0, 1, 1, 1, 1, 0],
+      "4": [0, 1, 1, 1, 1, 1],
+      "5": [1, 0, 0, 0, 0, 0],
+      "A": [1, 0, 0, 0, 0, 1],
+      "B": [1, 0, 0, 0, 1, 0],
+      "C": [1, 0, 0, 0, 1, 1],
+      "D": [1, 0, 0, 1, 0, 0],
+      "E": [1, 0, 0, 1, 0, 1],
+      "F": [1, 0, 0, 1, 1, 0],
+      "G": [1, 0, 0, 1, 1, 1],
+      "H": [1, 0, 1, 0, 0, 0],
+      "I": [1, 0, 1, 0, 0, 1],
+      "J": [1, 0, 1, 0, 1, 0],
+      "K": [1, 0, 1, 0, 1, 1],
+      "L": [1, 0, 1, 1, 0, 0],
+      "M": [1, 0, 1, 1, 0, 1],
+      "N": [1, 0, 1, 1, 1, 0],
+      "O": [1, 0, 1, 1, 1, 1],
+      "P": [1, 1, 0, 0, 0, 0],
+      "Q": [1, 1, 0, 0, 0, 1],
+      "R": [1, 1, 0, 0, 1, 0],
+      "S": [1, 1, 0, 0, 1, 1],
+      "T": [1, 1, 0, 1, 0, 0],
+      "U": [1, 1, 0, 1, 0, 1],
+      "V": [1, 1, 0, 1, 1, 0],
+      "W": [1, 1, 0, 1, 1, 1],
+      "X": [1, 1, 1, 0, 0, 0],
+      "Y": [1, 1, 1, 0, 0, 1],
+      "Z": [1, 1, 1, 0, 1, 0],
+      "6": [1, 1, 1, 0, 1, 1],
+      "7": [1, 1, 1, 1, 0, 0],
+      "8": [1, 1, 1, 1, 0, 1],
+      "9": [1, 1, 1, 1, 1, 0],
+      "@": [1, 1, 1, 1, 1, 1]
+    }
+    const inputStr = input.split('')
+    const outputStr = []
+    for (let i = 0; i < inputStr.length; i++) {
+      outputStr.push(dict[inputStr[i]])
+    }
+    // 使用随机数据补齐剩余的数据
+    if (outputStr.length < 30) {
+      outputStr.push(dict["."])
+      for (let i = outputStr.length; i < 30; i++) {
+        outputStr.push(randomProperty(dict))
+      }
+    }
+    return outputStr
+  }
+  // 随机抽取数据占位
+  function randomProperty(obj) {
+    const keys = Object.keys(obj);
+    const key = keys[keys.length * Math.random() << 0]
+    const value = obj[key]
+    return value;
+  }
+  // 编码生成gugu码
+  function encodeData() {
+    let input = document.getElementById("inputData").value
+    let encode = str2bin(input)
+    drawPoint(encode)
+  }
+</script>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        width: 100px;
+        height: 100px;
+    }
+</style>
+<body>
+    <img src="http://sy.com:3000/static/sy.jpg" alt="">
+    <a href="" download="sy.jpg">下载</a>
+
+    <script>
+        const img = new Image();
+        img.src = "http://sy.com:3000/static/sy.jpg";
+        img.crossOrigin = 'anonymous'
+        img.onload = function(){
+            document.body.appendChild(img);
+        }
+        document
+  .querySelector("a")
+  .addEventListener(
+    "click",
+    (event) => (event.target.href = 'http://sy.com:3000/static/sy.jpg'),
+  );
+        
+    </script>
+</body>
+</html>

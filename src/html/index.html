@@ -1,11 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>refer</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>倒计时</title>
+  <style>
+    body {
+  font-family: system-ui;
+}
+.count-down-wrap {
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  color: #FFFDF3;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  background-color: orange;
+}
+.count-down-wrap span {
+    display: inline-block;
+    padding: 2px 6px;
+    color: #393532;
+    border-radius: 4px;
+    background: #FFFDF3;
+    margin: 0 3px;
+    /* 请补全此处的 CSS 代码 */
+    font-variant-numeric: tabular-nums;
+}
+  </style>
 </head>
 <body>
-    <a href="https://www.yuewen.com/"  referrerpolicy="origin-when-cross-origin">阅文官网</a>
+  <input type="file" accept="image/*">
+<div class="count-down-wrap">
+  <p>
+    倒计时：<span>0</span>天 <span>0</span>时 <span>00</span>分 <span id="seconds">00</span>秒
+  </p>
+  <img src="https://xxvirtualcharactercdn.rongshuxia.com/92719c25aecaabac474e38917bf76b8b" alt="">
+</div>
+
+<script>
+    setInterval(() => {
+  seconds.textContent = String(new Date().getSeconds()).padStart(2, '0')
+}, 1000);
+
+
+const checkURL = (str) => {
+  try {
+    const url = new URL(str);
+    const arr = url.hostname.split(".");
+    const address = arr[arr.length - 2];
+    return address === "yuewen";
+  } catch (e) {
+    return false;
+  }
+};
+const url1 = "https://www.yuewen.com";
+const url2 = "https://jubao.yuewen.com:443";
+const url3 = "https://jubao.yuewen.com/detail";
+const url4 = "https://jubao.reader.qq.com/detail";
+const url5 = "https://jubao.yuewen.com@baidu.com";
+console.log(url1, checkURL(url1));  // https://www.yuewen.com                true
+console.log(url2, checkURL(url2));  // https://jubao.yuewen.com:443          true
+console.log(url3, checkURL(url3));  // https://jubao.yuewen.com/detail       true
+console.log(url4, checkURL(url4));  // https://jubao.reader.qq.com/detail    false
+console.log(url5, checkURL(url5));  // https://jubao.yuewen.com@baidu.com    false
+</script>
 </body>
 </html>

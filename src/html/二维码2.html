@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Discode解码</title>
+  <style>
+    .inputoutput {
+      float: left;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Program of OpenCV.js</h2
+  <p id="status">OpenCV.js is loading...</p>
+  <p>Powered By <a href="https://www.7gugu.com/">7gugu</a></p>
+  <p id="output">empty</p>
+  <div>
+    <div class="inputoutput">
+      <img id="imageSrc" alt="No Image" />
+      <div class="caption">imageSrc <input type="file" id="fileInput" name="file" /></div>
+    </div>
+    <div class="inputoutput">
+      <canvas id="canvasOutput"></canvas>
+      <div class="caption">canvasOutput</div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    // 编码表转换
+    function bin2str(inputArr) {
+      const dict = {
+        ".": [0, 0, 0, 0, 0, 0],
+        "a": [0, 0, 0, 0, 0, 1],
+        "b": [0, 0, 0, 0, 1, 0],
+        "c": [0, 0, 0, 0, 1, 1],
+        "d": [0, 0, 0, 1, 0, 0],
+        "e": [0, 0, 0, 1, 0, 1],
+        "f": [0, 0, 0, 1, 1, 0],
+        "g": [0, 0, 0, 1, 1, 1],
+        "h": [0, 0, 1, 0, 0, 0],
+        "i": [0, 0, 1, 0, 0, 1],
+        "j": [0, 0, 1, 0, 1, 0],
+        "k": [0, 0, 1, 0, 1, 1],
+        "l": [0, 0, 1, 1, 0, 0],
+        "m": [0, 0, 1, 1, 0, 1],
+        "n": [0, 0, 1, 1, 1, 0],
+        "o": [0, 0, 1, 1, 1, 1],
+        "p": [0, 1, 0, 0, 0, 0],
+        "q": [0, 1, 0, 0, 0, 1],
+        "r": [0, 1, 0, 0, 1, 0],
+        "s": [0, 1, 0, 0, 1, 1],
+        "t": [0, 1, 0, 1, 0, 0],
+        "u": [0, 1, 0, 1, 0, 1],
+        "v": [0, 1, 0, 1, 1, 0],
+        "w": [0, 1, 0, 1, 1, 1],
+        "x": [0, 1, 1, 0, 0, 0],
+        "y": [0, 1, 1, 0, 0, 1],
+        "z": [0, 1, 1, 0, 1, 0],
+        "0": [0, 1, 1, 0, 1, 1],
+        "1": [0, 1, 1, 1, 0, 0],
+        "2": [0, 1, 1, 1, 0, 1],
+        "3": [0, 1, 1, 1, 1, 0],
+        "4": [0, 1, 1, 1, 1, 1],
+        "5": [1, 0, 0, 0, 0, 0],
+        "A": [1, 0, 0, 0, 0, 1],
+        "B": [1, 0, 0, 0, 1, 0],
+        "C": [1, 0, 0, 0, 1, 1],
+        "D": [1, 0, 0, 1, 0, 0],
+        "E": [1, 0, 0, 1, 0, 1],
+        "F": [1, 0, 0, 1, 1, 0],
+        "G": [1, 0, 0, 1, 1, 1],
+        "H": [1, 0, 1, 0, 0, 0],
+        "I": [1, 0, 1, 0, 0, 1],
+        "J": [1, 0, 1, 0, 1, 0],
+        "K": [1, 0, 1, 0, 1, 1],
+        "L": [1, 0, 1, 1, 0, 0],
+        "M": [1, 0, 1, 1, 0, 1],
+        "N": [1, 0, 1, 1, 1, 0],
+        "O": [1, 0, 1, 1, 1, 1],
+        "P": [1, 1, 0, 0, 0, 0],
+        "Q": [1, 1, 0, 0, 0, 1],
+        "R": [1, 1, 0, 0, 1, 0],
+        "S": [1, 1, 0, 0, 1, 1],
+        "T": [1, 1, 0, 1, 0, 0],
+        "U": [1, 1, 0, 1, 0, 1],
+        "V": [1, 1, 0, 1, 1, 0],
+        "W": [1, 1, 0, 1, 1, 1],
+        "X": [1, 1, 1, 0, 0, 0],
+        "Y": [1, 1, 1, 0, 0, 1],
+        "Z": [1, 1, 1, 0, 1, 0],
+        "6": [1, 1, 1, 0, 1, 1],
+        "7": [1, 1, 1, 1, 0, 0],
+        "8": [1, 1, 1, 1, 0, 1],
+        "9": [1, 1, 1, 1, 1, 0],
+        "@": [1, 1, 1, 1, 1, 1]
+      }
+
+      let decode = ""
+      for (let o = 0; o < inputArr.length; o++) {
+        let input = inputArr[o];
+        Object.keys(dict).forEach(function (i) {
+          if (dict[i][0] == input[0] && dict[i][1] == input[1] && dict[i][2] == input[2] && dict[i][3] == input[
+              3] && dict[i][4] == input[4] && dict[i][5] == input[5]) {
+            decode = decode + i
+          }
+        })
+
+      }
+
+      return decode;
+    }
+
+    var imgSrcElement = document.getElementById('imageSrc');
+    var imageInput = document.getElementById('fileInput');
+
+    imageInput.addEventListener('change', (e) => {
+      imgSrcElement.src = URL.createObjectURL(e.target.files[0]);
+    })
+
+    // 因为是异步操作，所以需要onload等图像加载完毕后执行，也是回调
+    imgSrcElement.onload = function () {
+      // 读取获取矩阵（步骤1）
+      let src = cv.imread(imgSrcElement);
+      // 获取四个定位点的坐标
+      let dst = cv.Mat.zeros(src.rows, src.cols, cv.CV_8U);
+      let circles = new cv.Mat();
+      let color = new cv.Scalar(255, 0, 0);
+      cv.cvtColor(src, src, cv.COLOR_RGBA2GRAY, 0);
+      // You can try more different parameters
+      cv.HoughCircles(src, circles, cv.HOUGH_GRADIENT, 1, 300, 80, 40, 0, 30);
+      let locationDot = []
+      if (circles.cols > 4) {
+        console.log("定位失败");
+        return
+      } else {
+        console.log("定位成功")
+      }
+      for (let i = 0; i < circles.cols; ++i) {
+        let x = circles.data32F[i * 3];
+        let y = circles.data32F[i * 3 + 1];
+        let radius = circles.data32F[i * 3 + 2];
+        let center = new cv.Point(x, y);
+        locationDot.push({
+          x,
+          y
+        });
+        cv.circle(dst, center, radius, color);
+      }
+      // cv.imshow('canvasOutput', dst);
+
+      // 分配四个点
+      let dot1 = locationDot.pop()
+
+      let dot2 = [],
+        dot4 = []
+
+      for (let i = 0; i < locationDot.length; i++) {
+        if (locationDot[i].x != dot1.x && locationDot[i].y != dot1.y) {
+          dot2 = {
+            x: locationDot[i].x,
+            y: locationDot[i].y
+          }
+          locationDot.splice(i, 1)
+          break;
+        }
+      }
+
+      let dot3 = locationDot.pop()
+
+      for (let i = 0; i < locationDot.length; i++) {
+        if (locationDot[i].x != dot3.x && locationDot[i].y != dot3.y) {
+          dot4 = {
+            x: locationDot[i].x,
+            y: locationDot[i].y
+          }
+          locationDot.splice(i, 1)
+          break;
+        }
+      }
+
+      console.log("四点坐标:", dot1, dot2, dot3, dot4);
+
+      let x0 = dot1.x,
+        y0 = dot1.y
+      let x1 = dot2.x,
+        y1 = dot2.y
+      let x2 = dot3.x,
+        y2 = dot3.y
+      let x3 = dot4.x,
+        y3 = dot4.y
+      let crossY = ((y0 - y1) * (y3 - y2) * x0 + (y3 - y2) * (x1 - x0) * y0 + (y1 - y0) * (y3 - y2) * x2 + (x2 - x3) *
+        (y1 - y0) * y2) / ((x1 - x0) * (y3 - y2) + (y0 - y1) * (x3 - x2))
+      let crossX = x2 + (x3 - x2) * (crossY - y2) / (y3 - y2)
+      console.log("圆心定位:", crossX, crossY)
+
+      let center = new cv.Point(crossX, crossY)
+      cv.circle(src, center, 10, new cv.Scalar(0, 0, 0))
+
+      let total = []
+      let levelIndex = [100, 120, 140, 160, 180]
+      // 获取每一层数据
+      for (let level = 0; level < 5; level++) {
+        // 遍历一圈数据
+        for (let i = 0; i < 360; i += 10) {
+          // 旋转图片 
+          let dst = new cv.Mat();
+          let dsize = new cv.Size(src.rows, src.cols);
+          let center = new cv.Point(crossX, crossY);
+          let M = cv.getRotationMatrix2D(center, i, 1);
+          cv.warpAffine(src, dst, M, dsize, cv.INTER_LINEAR, cv.BORDER_CONSTANT, new cv.Scalar());
+          // 截图
+          let data = dst.roi(new cv.Rect(crossX + levelIndex[level] - 10, crossY - 10, 20, 18))
+          // 获得边框
+          cv.Canny(data, data, 100, 100, 3, false);
+          let contours = new cv.MatVector();
+          let hierarchy = new cv.Mat();
+          cv.findContours(data, contours, hierarchy, cv.RETR_CCOMP, cv.CHAIN_APPROX_SIMPLE)
+          console.log("个数", contours.size(), "面积", cv.contourArea(contours.get(contours.size() - 1), false))
+          // 计算边长 & 判断01
+          if (cv.contourArea(contours.get(contours.size() - 1), false) < 10) {
+            total.push(1)
+          } else {
+            total.push(0)
+          }
+          // 结束
+          cv.imshow('canvasOutput', dst);
+          data.delete()
+        }
+      }
+
+      console.log("原始数据", total)
+
+      let encodeData = []
+      for (let k = 0, len = total.length; k < len; k += 6) {
+        encodeData.push(total.slice(k, k + 6))
+      }
+      console.log("分割数据", encodeData);
+      let str = bin2str(encodeData)
+      console.log("数据解码", str)
+      document.getElementById("output").innerHTML = str
+      // src = src.roi(new cv.Rect(crossX+90, crossY-10, 20, 20))
+
+      // 显示结果
+      // cv.imshow('canvasOutput', data);
+      src.delete();
+      dst.delete();
+      circles.delete();
+
+
+    }
+
+    var opencvLoad = function () {
+      document.getElementById('status').innerHTML = 'opencv is ready'; //回调函数，用来显示opencv.js加载完成
+    }
+  </script>
+
+  <!-- 异步加载，不对程序进行阻塞 -->
+  <script async src="opencv.js" onload="opencvLoad()" type="text/javascript"></script>
+</body>
+
+</html>

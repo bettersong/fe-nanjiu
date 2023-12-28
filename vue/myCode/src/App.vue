@@ -15,6 +15,7 @@
     <!-- <cssModule /> -->
     <!-- <input type="text" v-model="name" class="text_input" /> -->
     <img class="my_img" referrerpolicy="no-referrer" src="http://nanjiu.com:3000/static/sy.jpg" alt="">
+    <img src="https://xxvirtualcharactercdn.rongshuxia.com/92719c25aecaabac474e38917bf76b8b" alt="">
     <!-- <img src="https://cnc.smartdata.net.cn:1443/chengnan-api/profile/upload/2023/07/27/tmp_f2529402be234dc0622ff863c6a6ecc48224456bcef3d1a5_20230727202538A002.jpg" width="300px"> -->
     <!-- <img src="https://cnc.smartdata.net.cn:1443/chengnan-api/profile/upload/2023/07/22/tmp_2ad7ffa4a879283f20222434319408c6c9592c65083bf5ce_20230722102014A013.jpg" width="400px" /> -->
   </div>
