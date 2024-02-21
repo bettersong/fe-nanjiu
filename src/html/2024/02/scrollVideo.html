@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: auto;
+            /* object-fit: cover; */
+        }
+        p {
+            line-height: 28px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <p>小时候，我和伙伴们经常念这样的儿歌。我们也都知道儿歌唱的是萤火虫。在空旷的山野里、小院的梧桐树下、村口的柴垛子里、池塘的草丛里、乡野的地畔头，萤火虫是随处可见的。从夏至秋的夜晚，伙伴们成群结队不知疲倦地追随着那些在低空中轻轻飘飞的萤火虫，脸上露出惊喜的神色。我们追啊，赶啊，仿佛小小的萤火虫就是童年黑夜里最明亮的灯光。曾经那样的夜晚不知陪我走过多少，那样的黑夜不知扑捉了多少只萤火虫。时光渐远，那些儿时的往事像珍珠一样，串接在记忆的门扉里至今璀璨夺目。
+            人们的生活清净简单，在我心里仿佛是一首纯净的田园牧歌。春种秋收，年复一年。在乡下我们能见到很多种小昆虫，萤火虫是其中最常见的一种。离我家不远处有一方池塘，夏天的时候，池塘边长满了野草，到了晚上，田野里、池塘边的草丛上空萤火虫飞来飞去，就像一个个小小的灯笼，照耀着恬静的乡村。有了这些萤火虫，我们这些顽皮的孩子便有了很多趣事。那时整个村子里只有三台电视机，夏天的晚上，人们常聚在村头的树下，拉拉家常，说说笑话。我们这些孩子便跑到野地里去扑捉那些漫天飞舞的流萤，因看到萤火虫身上的发光体总是让我们感到好玩。我们走在水塘边，看萤火虫的倒影在水中一闪一闪，我们数着天上的星星，也数着水塘上面飞舞的流萤，一只，两只，三只……
+
+        </p> -->
+        <video src="../../../static/macpro.mp4"></video>
+        <!-- <p>
+            在迷人的夏夜里，我们结伴而行去野外扑捉萤火虫。去之前，妈妈会给我们准备一个透明的瓶子，我们便蹦蹦跳跳地奔向池塘。晚上，月光明媚、星光灿烂，我们轻快地奔跑着，凉风在耳边呼呼飘过，仿佛在为孩子纯真的梦想助威。许多萤火虫从我们面前飞过，在深蓝的夜空里一闪一闪的，煞是可爱，它们轻盈的身影伴着我们童年的梦一起装进了透明的瓶子里。
+        </p> -->
+    </div>
+    
+
+    <!-- <script>
+        const video = document.querySelector('video');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            })
+        }, {
+            threshold: 0.5
+        });
+        observer.observe(video);
+    </script> -->
+
+    <script>
+        const video = document.querySelector('video');
+        const container = document.querySelector('.container');
+        const speed = 250
+        video.addEventListener('loadedmetadata', () => {
+            container.style.height = video.duration * speed + 'px';
+        })
+
+        const playVideo = () => {
+
+            const scrollY = window.scrollY;
+
+            const height = document.documentElement.scrollHeight - window.innerHeight;
+            const percentage = (scrollY / height);
+
+            video.currentTime = video.duration * percentage;
+            window.requestAnimationFrame(playVideo);
+        };
+
+        window.addEventListener("scroll", playVideo);
+    </script>
+</body>
+</html>

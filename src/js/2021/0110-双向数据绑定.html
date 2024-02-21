@@ -10,28 +10,44 @@
     <input type="text" id="input">
     <span></span>
     <script>
-        let input = document.getElementById('input')
-        let text = document.querySelector('span')
-        let obj = {}
-        let _v = null;
-        Object.defineProperty(obj,'name',{
-            get: () => {
-                // console.log(obj.name)
-                return _v;
-            },
-            set: (val) => {
-                console.log(val,'set')
-                input.value = val
-                text.innerText = val
-                _v = val
-            }
+        // let input = document.getElementById('input')
+        // let text = document.querySelector('span')
+        // let obj = {}
+        // let newObj = []
+        // let _v = null;
+        // Object.defineProperty(newObj,'0',{
+        //     get: () => {
+        //         return _v;
+        //     },
+        //     set: (val) => {
+        //         console.log('更新：', val)
+        //         input.value = val
+        //         text.innerText = val
+        //         _v = val
+        //     }
+        // })
+        // input.addEventListener('keyup',(e) => {
+        //     newObj[0] = e.target.value
+        // })
+
+
+        function defineReactive(obj, key, val) {
+            Object.defineProperty(obj, key, {
+                get: () => {
+                    console.log(`【读取key：${key}】`, val)
+                    return val
+                },
+                set: (newVal) => {
+                    console.log(`【更新key：${key}】`, newVal)
+                    val = newVal
+                }
+            })
+        }
+        const arr = [1,2,3]
+        arr.forEach((item,index) => {
+            defineReactive(arr,index,item)
         })
-        new Proxy(obj,{})
-        input.addEventListener('keyup',(e) => {
-            obj.name = e.target.value
-            console.log(obj.name)
-        })
-        // console.log(obj.name)
+        
     </script>
 </body>
 </html>

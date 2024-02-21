@@ -2,7 +2,7 @@
 
 在公众号也会推送面试题，更加方便阅读学习。
 
-![image-20191112215451969](https://blog-static.cnblogs.com/files/songyao666/wx_scan_sy.gif)
+![image-20191112215451969](https://images.cnblogs.com/cnblogs_com/songyao666/2377390/o_240205104755_gzh.jpg)
 
 #### day39
 

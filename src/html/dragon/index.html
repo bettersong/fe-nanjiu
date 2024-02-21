@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="800" height="600" style="border:1px solid #d3d3d3;">  
+        你的浏览器不支持Canvas元素。  
+    </canvas>  
+    <script>
+        window.onload = function() {  
+    var canvas = document.getElementById('myCanvas');  
+    var ctx = canvas.getContext('2d');  
+  
+    // 画龙头  
+    ctx.beginPath();  
+    ctx.arc(100, 200, 50, 0, 2 * Math.PI); // 画一个圆形的头部  
+    ctx.fillStyle = 'green'; // 设置填充颜色为绿色  
+    ctx.fill(); // 填充路径  
+    ctx.strokeStyle = 'black'; // 设置描边颜色为黑色  
+    ctx.stroke(); // 描边路径  
+  
+    // 画龙眼睛  
+    ctx.beginPath();  
+    ctx.arc(80, 180, 10, 0, 2 * Math.PI); // 画一个圆形的眼睛  
+    ctx.fillStyle = 'white'; // 设置填充颜色为白色  
+    ctx.fill(); // 填充路径  
+    ctx.strokeStyle = 'black'; // 设置描边颜色为黑色  
+    ctx.stroke(); // 描边路径  
+  
+    // 画龙身体  
+    ctx.beginPath();  
+    ctx.moveTo(100, 200); // 从龙头开始画龙身体  
+    ctx.lineTo(200, 100); // 画龙身体的上半部分  
+    ctx.lineTo(300, 200); // 画龙身体的下半部分  
+    ctx.fillStyle = 'green'; // 设置填充颜色为绿色  
+    ctx.fill(); // 填充路径  
+    ctx.strokeStyle = 'black'; // 设置描边颜色为黑色  
+    ctx.stroke(); // 描边路径  
+}
+    </script>
+</body>
+</html>
