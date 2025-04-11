@@ -1,0 +1,67 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Title and Description Layout</title>  
+<style>  
+    .container {  
+        width: 300px; /* 可以根据需要调整 */  
+        border: 1px solid #ccc; /* 可选：用于可视化边界 */  
+        padding: 10px; /* 可选：增加内边距 */  
+        margin-bottom: 10px; /* 可选：卡片之间的间距 */  
+    }  
+  
+    .title {  
+        font-size: 16px; /* 可以根据需要调整 */  
+        font-weight: bold; /* 可选：使标题加粗 */  
+        line-height: 1.5; /* 可选：调整行高 */  
+        margin-bottom: 5px; /* 可选：标题和简介之间的间距 */  
+        overflow: hidden; /* 隐藏超出容器的内容 */  
+        display: -webkit-box; /* 使用WebKit的CSS扩展 */  
+        -webkit-line-clamp: 2; /* 限制为2行 */  
+        -webkit-box-orient: vertical; /* 垂直方向上的文本裁剪 */  
+    }  
+  
+    .description {  
+        font-size: 14px; /* 可以根据需要调整 */  
+        line-height: 1.5; /* 可选：调整行高 */  
+        overflow: hidden; /* 隐藏超出容器的内容 */  
+        display: -webkit-box; /* 使用WebKit的CSS扩展 */  
+        -webkit-line-clamp: 2; /* 限制为2行，但如果标题占用了2行，则可能不显示 */  
+        -webkit-box-orient: vertical; /* 垂直方向上的文本裁剪 */  
+    }  
+  
+    /* 当标题只有一行时，显示简介 */  
+    .title.single-line + .description {  
+        display: block; /* 确保简介显示 */  
+    }  
+</style>  
+<script>  
+    // 使用JavaScript检测标题行数并调整简介的显示  
+    window.addEventListener('DOMContentLoaded', function() {  
+        var titles = document.querySelectorAll('.title');  
+        titles.forEach(function(title) {  
+            var description = title.nextElementSibling;  
+            if (title.scrollHeight <= title.clientHeight) {  
+                // 如果标题只有一行，给标题添加一个类以便调整简介的显示  
+                title.classList.add('single-line');  
+            } else {  
+                // 如果标题超过一行，确保简介不显示（可选，取决于您的具体需求）  
+                description.style.display = 'none';  
+            }  
+        });  
+    });  
+</script>  
+</head>  
+<body>  
+    <div class="container">  
+        <div class="title">这是一个单行标题</div>  
+        <div class="description">这是对应的简介，当标题只有一行时会显示。</div>  
+    </div>  
+    <div class="container">  
+        <div class="title">这是一个双行标题，用于测试当标题占用两行时简介的显示情况。</div>  
+        <div class="description">这个简介可能不会显示，因为标题已经占用了两行。</div>  
+    </div>  
+</body>  
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text-spread-container {
+        position: relative;
+        overflow: hidden;
+        max-height:100px;
+        }
+        .text{
+        color: #1f1f1f;
+        line-height: 0.22rem;
+        }
+        .btn {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            cursor: pointer;
+            background-color: #fff;
+            }
+            .btn::before {
+position: absolute;
+right: 100%;
+content: "";
+width:0.16rem;
+height:0.22rem;
+background-image: linear-gradient(270deg,#fff,hsla(0,0%,100%,0));
+}
+    </style>
+</head>
+<body>
+    <div class="text-spread-container">
+        <div class="text">我是一大段文字文字我是一大段文字文字我是一大段文字文字我是一大段文字文字我是一大段文字文字我是一大段文字文字我是一大段文字文字我是一大段文字文字我是一大段文字文字我是一大段文字文字</div>
+        <div class="btn">...查看更多</div>
+    </div>
+</body>
+</html>

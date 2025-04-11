@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [
+            { product: "iPhone X", quantity: 25, color: "black" },
+            { product: "Huawei mate50", quantity: 6, color: "white" },
+            { product: "xiaomi 13", quantity: 0, color: "black" },
+            { product: "iPhone 13", quantity: 10, color: "white" },
+            { product: "Huawei P50", quantity: 5, color: "black" },
+        ]
+
+        const newArr = Object.groupBy(arr, (item) => item.color)
+
+        // console.log('【newArr】', newArr)
+
+        const list = Object.groupBy(arr, (item) => {
+            return item.product.includes('iPhone') ? 'iPhone' : '国产品牌'
+        })
+
+        // console.log('【list】', list)
+
+        // const str = 'My name is nanjiu'
+
+        // const strReg = /[[a-z]&&[^aeiou]]/gv
+        // const strArr = str.match(strReg)
+        // console.log('【strArr】', strArr)
+
+        let myEmojis = "😁,😍,😴,☉‿⊙,:O";
+
+        let myRegex = /[\p{Emoji}--\p{ASCII}]/gv;
+        // console.log(myEmojis.match(myRegex));
+
+        const getList = () => {
+            const { resolve, reject, promise } = Promise.withResolvers()
+
+            setTimeout(() => {
+                const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                resolve(list)
+            }, 1000)
+
+            return promise
+        }
+
+        // getList().then(res => {
+        //     console.log('【res】', res)
+        // })
+
+        // 【res】 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        
+        const groupList = [1, 2, 3, 4, 5, 6] 
+
+        const newGroupList = groupList.with(2, 'nanjiu')
+        console.log('【newGroupList】', newGroupList)
+        console.log('【groupList】', groupList)
+
+    </script>
+</body>
+</html>

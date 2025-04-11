@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //     document.cookie = `name=前端南玖; expires=${new Date(2024, 2, 1).toUTCString()};`
+    //     document.cookie = `age=18; city=shanghai;`
+    //     // document.cookie = `city=shanghai;`
+    //     console.log('【cookie】', document.cookie)
+
+    //     const converter = {
+    //         read: function (value) {
+    //         if (value[0] === '"') {
+    //             value = value.slice(1, -1);
+    //         }
+    //         return value.replace(/(%[\dA-F]{2})+/gi, decodeURIComponent)
+    //         },
+    //         write: function (value) {
+    //         return encodeURIComponent(value).replace(
+    //             /%(2[346BF]|3[AC-F]|40|5[BDE]|60|7[BCD])/g,
+    //             decodeURIComponent
+    //         )
+    //         }
+    //     };
+    //     function assign (target) {
+    //         for (var i = 1; i < arguments.length; i++) {
+    //         var source = arguments[i];
+    //         for (var key in source) {
+    //             target[key] = source[key];
+    //         }
+    //         }
+    //         return target
+    //     }
+    //     function getCookie (key) {
+            
+    //         const cookies = document.cookie ? document.cookie.split('; ') : [];
+    //         const jar = {};
+    //         for (let i = 0; i < cookies.length; i++) {
+    //             const parts = cookies[i].split('=');
+    //             const value = parts.slice(1).join('=');
+
+    //             try {
+    //             const foundKey = decodeURIComponent(parts[0]);
+    //             jar[foundKey] = converter.read(value, foundKey);
+
+    //             if (key === foundKey) {
+    //                 break
+    //             }
+    //             } catch (e) {}
+    //         }
+    //             return key ? jar[key] : jar
+    //         }
+
+    //   function setCookie (key, value, attributes) {
+    //     if (typeof document === 'undefined') {
+    //         return
+    //     }
+
+    //     attributes = assign({}, { path: '/' }, attributes);
+
+    //     if (typeof attributes.expires === 'number') {
+    //         attributes.expires = new Date(Date.now() + attributes.expires * 864e5);
+    //     }
+    //     if (attributes.expires) {
+    //         attributes.expires = attributes.expires.toUTCString();
+    //     }
+
+    //     key = encodeURIComponent(key)
+    //         .replace(/%(2[346B]|5E|60|7C)/g, decodeURIComponent)
+    //         .replace(/[()]/g, escape);
+
+    //     var stringifiedAttributes = '';
+    //     for (var attributeName in attributes) {
+    //         if (!attributes[attributeName]) {
+    //         continue
+    //         }
+
+    //         stringifiedAttributes += '; ' + attributeName;
+
+    //         if (attributes[attributeName] === true) {
+    //         continue
+    //         }
+    //         stringifiedAttributes += '=' + attributes[attributeName].split(';')[0];
+    //     }
+
+    //     return (document.cookie =
+    //         key + '=' + converter.write(value, key) + stringifiedAttributes)
+    //     }
+    //     console.log(getCookie('name'))
+    //     setCookie('course', 'fe', { expires: 365 })
+
+    //    function removeCookie (key, attributes) {
+    //     setCookie(
+    //         key,
+    //         '',
+    //         assign({}, attributes, {
+    //           expires: -1
+    //         })
+    //       );
+    //     }
+
+    //     removeCookie('course')
+    cookieStore.addEventListener('change', (event) => {
+        const type = event.changed.length ? 'change' : 'delete';
+        const data = (event.changed.length ? event.changed : event.deleted).map((item) => item.name);
+
+        console.log(`【${type}】, cookie：${JSON.stringify(data)}`);
+    });
+
+        // async function getCookie (key) {
+        //     const name = await cookieStore.get(key)
+        //     console.log('【name】', name)
+        // }
+        // getCookie('site')
+
+        // async function getAllCookies () {
+        //     const cookies = await cookieStore.getAll()
+        //     // console.log('【cookies】', cookies)
+        // }
+        // getAllCookies()
+
+        function setCookie (key, value) {
+            cookieStore.set(key, value).then(res => {
+                console.log('设置成功')
+            }).catch(err => {
+                console.log('设置失败')
+            })
+            // cookieStore.set({
+            //     name: key,
+            //     value: value,
+            //     path: '/',
+            //     expires: new Date(2024, 2, 1)
+            // }).then(res => {
+            //     console.log('设置成功')
+            // }).catch(err => {
+            //     console.log('设置失败')
+            
+            // })
+        }
+        // setCookie('site', 'https://bettersong.github.io/nanjiu/')
+        
+
+        function removeCookie (key) {
+            cookieStore.delete(key).then(res => {
+                console.log('删除成功')
+            }).catch(err => {
+                console.log('删除失败')
+            })
+        }
+        removeCookie('site')
+
+        // cookieStore.addEventListener('change', event => {
+        //     console.log('【event】', event)
+        // })
+    </script>
+</body>
+</html>
