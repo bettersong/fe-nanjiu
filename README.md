@@ -1,6 +1,6 @@
 
 
-# 南玖的前端学习乐园、以面试来驱动学习（点个star吧～）
+# 南玖的前端知识库（点个star吧～）
 
 **另外，你可以在以下网站（点击图片跳转）关注我（你的关注是对我的肯定）：**
 
@@ -16,79 +16,3 @@
 | [【前端工程化】](https://github.com/bettersong/interview/blob/master/md/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/index.md) | [【网络&安全】](https://github.com/bettersong/interview/blob/master/md/%E7%BD%91%E7%BB%9C%26%E5%AE%89%E5%85%A8/index.md) | [【性能优化】]  (待更新)                                     |
 | [【浏览器】]（待更新）                                       | [【hybrid】]  (待更新)                                       | [【自研万能脚手架】](https://github.com/bettersong/songyao-cli) |
 
-#### day50
-
-- [193 - webpack的执行流程](https://github.com/bettersong/interview/issues/193) 
-- [192 - 什么是合成层，怎么触发？](https://github.com/bettersong/interview/issues/192)
-- [191 - flex布局中，flex属性有哪些值，分别代表什么？](https://github.com/bettersong/interview/issues/191) 
-
-#### day49
-
-- [190 - 对象数组转树结构](https://github.com/bettersong/interview/issues/190)
-- [189 - webpack打包时怎么给script标签加上async、defer属性？](https://github.com/bettersong/interview/issues/189)
-- [188 - vue同时更新了多个数据,dom是更新多次还是更新一次?](https://github.com/bettersong/interview/issues/188)
-
-#### day48
-
-- [187 - HTTP请求并发限制](https://github.com/bettersong/interview/issues/187)
-- [186 - requestAnimationFrame回调是微任务还是宏任务？为什么推荐使用它代替setTimeout写动画？](https://github.com/bettersong/interview/issues/186)
-- [185 - 移动端点击延迟的原因？fast-click解决的原理是什么？](https://github.com/bettersong/interview/issues/185)
-
-#### day47
-
-- [184 - 懒加载原理，IntersectionObserver用过吗？](https://github.com/bettersong/interview/issues/184)
-- [183 - webpack代码压缩是怎么做的，用了哪些插件？](https://github.com/bettersong/interview/issues/183)
-- [182 - 行内元素的padding和margin是否有效?](https://github.com/bettersong/interview/issues/182)
-
-#### day46
-
-- [181 - 手写一个带有并发限制的异步调度器](https://github.com/bettersong/interview/issues/181)
-- [180 - 手写一下JSON.stringify的实现](https://github.com/bettersong/interview/issues/180) 
-- [179 - 说说你对H5移动端适配的理解](https://github.com/bettersong/interview/issues/179)
-
-#### day45
-
-- [178 - 通用组件除了以包的形式还可以用什么方式](https://github.com/bettersong/interview/issues/178)
-- [177 - 说说性能优化有哪些手段](https://github.com/bettersong/interview/issues/177)
-
-- [176 - 说说你对viewport的理解？](https://github.com/bettersong/interview/issues/176)
-
-#### day44
-
-- [175 - 说说vue中深度监听（deep-watch）的原理](https://github.com/bettersong/interview/issues/175)
-- [174 - 说说你对深度优先遍历(DFS)与广度优先遍历(BFS)的理解](https://github.com/bettersong/interview/issues/174)
-- [173 - 说说vue的自定义指令以及它的生命周期](https://github.com/bettersong/interview/issues/173)
-
-#### day43
-
-- [172 - 页面布局时是不是节点越少越好？为什么？](https://github.com/bettersong/interview/issues/172)
-- [171 - 为什么说在js中数组不是真正意义上的数组？](https://github.com/bettersong/interview/issues/171)
-
-- [170 - 说说你对CSS中@scope的理解](https://github.com/bettersong/interview/issues/170)
-
-#### day42
-
-- [169 - 介绍下 Set、Map、WeakSet 和 WeakMap 的区别？](https://github.com/bettersong/interview/issues/169)
-- [168 - Vue 中的 computed 和 watch 的区别在哪里? ](https://github.com/bettersong/interview/issues/168)
-- [167 - webpack 中 loader 和 plugin 的区别是什么?](https://github.com/bettersong/interview/issues/167)
-
-#### day41
-
-- [day41 - 前端常见的排序算法 ](https://github.com/bettersong/interview/issues/164)
-- [day41 - `<img>`的title和alt有什么区别？](https://github.com/bettersong/interview/issues/165)
-- [day41 - 说一说从浏览器地址栏输入 url 到显示页面的步骤？](https://github.com/bettersong/interview/issues/166)
-
-#### day40
-
-- [day40 - CSS优先级是如何计算的？](https://github.com/bettersong/interview/issues/163)
-- [day40 - 说一说你用过的CSS预处理器，原理是什么？](https://github.com/bettersong/interview/issues/162)
-- [day40 - 如何判断设备来源？](https://github.com/bettersong/interview/issues/161)
-
-#### day39
-
-- [day39 - 谈一谈浏览器的缓存机制？](https://github.com/bettersong/interview/issues/157)
-- [day39 - Ajax 解决浏览器缓存问题？](https://github.com/bettersong/interview/issues/158)
-- [day39 - 同步和异步的区别？](https://github.com/bettersong/interview/issues/159)
-- [day39 - 什么是浏览器的同源策略？](https://github.com/bettersong/interview/issues/160)
-
-#### [查看更多](<https://github.com/bettersong/interview/blob/master/src/md/2.md>)
